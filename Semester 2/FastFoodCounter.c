@@ -80,11 +80,37 @@ node* head = NULL;
 
 int main () {
 
-    head = addOrder(head, 1);
-    head = addOrder(head, 2);
-    head = addOrder(head, 3);
+  int choice;
+  int counter = 0;
 
-    displayOrder(head);
+  printf("1. Order\n");
+  printf("2. Display\n");
+
+  scanf("%d", &choice);
+
+  switch(choice) {
+
+    case 1 :
+    printf("1. Ayam\n");
+    printf("2. Daging\n");
+    printf("3. Ikan\n");
+
+    counter = counter + 1;
+
+    head = addOrder(head, counter);
+    displayOrder(head); 
+
+
+    break;
+
+    case 2:
+    displayOrder(head); 
+
+
+    default :  printf("Invalid Choice\n");
+  }
+
+  
 
     return 0;
 }
