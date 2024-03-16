@@ -1,6 +1,5 @@
 # College Project
  
-Teuku Fayaz Ahsan Undergraduate Computer Science - Software Engineering from Binus University 
 
 This folder consist of Solo Project for learning and AOL.
 
