@@ -4,10 +4,10 @@
 /*Counter should have
 
 ---------------- Using Queue Linked List
--Add Order = add tail
--View Order = display all
-- Delete Order = delete beginning
-- Find Order Numbers Position 
+-Add Order = add tail v 
+-View Order = display all v 
+- Delete Order = delete beginning v 
+- Find Order Numbers Position  
 -----------------
 -Build menu 
 
@@ -75,25 +75,43 @@ void displayOrder(node* head) {
 
 }
 
+node* findOrder(node* head, int findS) {
+    node* ptr = head;
+    int counter = 0;
+
+
+    while(ptr != NULL) {
+        if(ptr->data == findS) {
+            printf("Order is number %d\n", counter+1);
+            return head;
+        }
+        ptr = ptr->next;
+        counter++;
+    }
+    printf("Order not found\n");
+    return NULL;
+}
+
 
 
 node* head = NULL;
 
 int main () {
 
-  int choice;
+  int choice = 0;
   int counter = 0;
 
 do {
  
  printf("\n\nFast Food Counter\n");
  printf("1. New Order\n");
- printf("2. Delete Order\n");
+ printf("2. Finish Order\n");
  printf("3. Display All Orders\n");
- printf("4. View Menu\n");
- printf("5. Exit\n");
+ printf("4. Find Order\n");
+ printf("5. View Menu\n");
+ printf("6. Exit\n");
 
-printf("Enter your choice: ", &choice);
+printf("Enter your choice: ");
 scanf("%d", &choice);
 getchar();
 
@@ -107,12 +125,13 @@ if(choice == 1) {
     printf("4. Ice Cream - $2.50\n");
     printf("5. Chicken - $4.00\n");
     printf("\n6. Done\n");
-    printf("\n\nNote : Cash Payments is only available if below $20\n");
+  
     
     float total = 0;
     int order = 0;
+
     while(order != 6) {
-        printf("Enter your order: ", &order);
+        printf("Enter your order: ");
         scanf("%d", &order);
         getchar();
 
@@ -128,28 +147,53 @@ if(choice == 1) {
             total = total + 4.00;
         } else if(order == 6) {
             printf("Total: $%.2f\n", total);
-            if(total > 20) {
-            printf("Enter Card Number\n");
-            int card;
-            scanf("%d", &card);
+            
+            int payments = 0;
+
+            printf("Enter the payment amount: ");
+            scanf("%d", &payments);
             getchar();
-            printf("\nThank you for your payment\n");
+
+            int change = 0;
+            change = total - payments;
+
+            if(change == 0) {
+                printf("No Change\n");
+            }
+            else {
+                printf("Change: $%.2f\n", total - payments);
+            }
+
             head = addOrder(head, counter);
             
-        } else {
-            head = addOrder(head, counter);
-            
-        }
+        } 
         
     }
 }
-}
 
+else if (choice == 2) {
+    head = deleteOrder(head);
+}
 else if (choice == 3) {
     displayOrder(head);
 }
+else if(choice == 4) {
+    printf("Find Order: ");
+    int findS = 0;
+    scanf("%d", &findS);
 
-} while(choice != 5); 
+    head = findOrder(head, findS);
+}
+
+} while(choice != 6); 
 
     return 0;
 }
+
+
+
+
+
+
+
+//Fay 
