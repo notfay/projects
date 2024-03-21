@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*Counter should have
 
@@ -71,7 +72,7 @@ void displayOrder(node* head) {
             ptr = ptr->next;
         }
 
-        printf("End of Order");
+        printf("No Orders Left\n");
 
 }
 
@@ -100,6 +101,7 @@ int main () {
 
   int choice = 0;
   int counter = 0;
+  float totalRevenue;
 
 do {
  
@@ -108,10 +110,11 @@ do {
  printf("2. Finish Order\n");
  printf("3. Display All Orders\n");
  printf("4. Find Order\n");
- printf("5. View Menu\n");
- printf("6. Exit\n");
+ printf("\n5. View Menu\n");
+ printf("6. Todays Revenue\n");
+ printf("7. Exit\n");
 
-printf("Enter your choice: ");
+printf("\nEnter your choice: ");
 scanf("%d", &choice);
 getchar();
 
@@ -124,11 +127,13 @@ if(choice == 1) {
     printf("3. Soda - $1.50\n");
     printf("4. Ice Cream - $2.50\n");
     printf("5. Chicken - $4.00\n");
-    printf("\n6. Done\n");
+    printf("\n6. Done\n\n");
   
     
     float total = 0;
     int order = 0;
+    int payments;
+   
 
     while(order != 6) {
         printf("Enter your order: ");
@@ -148,20 +153,22 @@ if(choice == 1) {
         } else if(order == 6) {
             printf("Total: $%.2f\n", total);
             
-            int payments = 0;
-
+            payments = 0;
+           
             printf("Enter the payment amount: ");
             scanf("%d", &payments);
             getchar();
 
             int change = 0;
             change = total - payments;
-
+            
             if(change == 0) {
                 printf("No Change\n");
+                totalRevenue += total;
             }
             else {
                 printf("Change: $%.2f\n", total - payments);
+                totalRevenue += total;
             }
 
             head = addOrder(head, counter);
@@ -173,6 +180,7 @@ if(choice == 1) {
 
 else if (choice == 2) {
     head = deleteOrder(head);
+    printf("Order Finished\n\n");
 }
 else if (choice == 3) {
     displayOrder(head);
@@ -185,7 +193,42 @@ else if(choice == 4) {
     head = findOrder(head, findS);
 }
 
-} while(choice != 6); 
+else if (choice == 5) {
+
+}
+
+else if (choice == 6) {
+    long long int employeeIdMaster = 2702366634;
+    long long int employeeIdUse = 0;
+    char passwordUse[20];
+    char passwordMaster[20] = "helloworld";
+
+    printf("\nEnter Employee Id and Password\n");
+    
+    printf("Employee Id: ");
+    scanf("%lld", &employeeIdUse);
+    getchar ();
+
+    printf("Password: ");
+    scanf("%s", passwordUse);
+    getchar ();
+
+    if(employeeIdUse == employeeIdMaster && strcmp(passwordUse, passwordMaster) == 0) {
+        if (totalRevenue < 1.0) {
+            printf("No Revenue Today\n");
+        }
+        else {
+            printf("\nTodays Revenue is: $%.2lf\n", totalRevenue);
+        }
+        
+    }
+    else {
+        printf("\n! No Permission to View, Contact Manager !\n");
+    }
+   
+}
+
+} while(choice != 7); 
 
     return 0;
 }
@@ -196,4 +239,4 @@ else if(choice == 4) {
 
 
 
-//Fay 
+//Fay 21/03/24
