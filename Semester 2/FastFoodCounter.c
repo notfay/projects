@@ -119,10 +119,10 @@ scanf("%d", &choice);
 getchar();
 
 if(choice == 1) {
-    counter = counter + 1;
+    counter++;
 
     printf("\nMenu : \n");
-    printf("1. Burger - $3.50\n");
+    printf("1. Burger - $3.50\n");                  //Swich Case > if else
     printf("2. Fries - $2.00\n");
     printf("3. Soda - $1.50\n");
     printf("4. Ice Cream - $2.50\n");
@@ -194,7 +194,13 @@ else if(choice == 4) {
 }
 
 else if (choice == 5) {
-
+    printf("\nMenu : \n");
+    printf("1. Burger - $3.50\n");
+    printf("2. Fries - $2.00\n");
+    printf("3. Soda - $1.50\n");
+    printf("4. Ice Cream - $2.50\n");
+    printf("5. Chicken - $4.00\n");
+    printf("\n6. Done\n\n");
 }
 
 else if (choice == 6) {
@@ -228,7 +234,25 @@ else if (choice == 6) {
    
 }
 
+else if (choice == 000) {
+    printf("Confirm Panic Mode: ");
+    char panicChoice;
+    scanf("%c", &panicChoice);
+
+    if(panicChoice == 'y' || panicChoice == 'Y') {
+
+    while(1) {
+        printf("Panic Mode Enabled\n");
+        printf("\n\nAll System Locked!\n");
+    }
+    }
+
+    else break;
+}
+
 } while(choice != 7); 
+
+printf("Operation Ended");
 
     return 0;
 }
@@ -239,4 +263,4 @@ else if (choice == 6) {
 
 
 
-//Fay 21/03/24
+//Fay  24/03/24
