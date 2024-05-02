@@ -128,8 +128,9 @@ int main () {
          do {
                 printf("Input a new slang word [Must be more than 1 characters and contains no space] :\n-");
                 fgets(addSlang, sizeof(addSlang), stdin); 
-                addSlang[strcspn(addSlang, "\n")] = '\0'; // Remove the trailing newline
+                addSlang[strcspn(addSlang, "\n")] = '\0'; //menggunakan fgets agar bug dibawah tidak terjadi, ini buat ngapus line terakhir (\n) 
             } while (isValid(addSlang));
+
 
         // do {
         //     printf("Input a new slang word [Must be more than 1 characters and contains no space] :\n-");   //Bug disini dimana saat kita input "d a" output ini akan double
