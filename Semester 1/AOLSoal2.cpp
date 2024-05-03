@@ -490,15 +490,6 @@ else {
         break;
     }
     
-    else if (menuChoice == 83) { //apa ini?
-    	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    	printf("\t\t\t\t\t\t\tEaster egg :O\n\n\n");	
-    	printf("\t\t\t\t\t\tSpecial Thanks : Pak Panji\n\n\n");
-    	printf("   Makasih pak untuk 3 bulannya, bener-bener dari awal saya sama sekali belum nyentuh hal-hal yang berbau programming.\n");
-    	printf ("     tapi berkat gaya ngajar bapak saya paham lah dasar-dasarnya walaupun logika programmingnya belum sebagus kaya\n         \tAlvin, Shanon, Gabriella, Marco, dkk. jadi saya masih ngandalin GPT buat \"fix the code\", dll.\n\t\t Jujur saya butuh bantuan GPT juga buat soal ini, jadi saya beneran ingin mohon maaf");
-    	printf("\t\t\t\t\t\t tapi saya sangat berterima kasih buat bekal kedepannya. \n\n\n\n\n\t              ya mungkin itu saja yang saya bisa bilang pak, semester depan ngajar lagi ya pak, \n\t          sama bapak itu seru banget (bismillah UAS Algo bagus + ga SP), terima kasih sekali lagi pak\n\n\n\n");
-    	break;
-	}
     else {
     	printf("\n\nError M1: Invalid input .-.\n\n");		//error ini akan ditampilkan apabila input tidak sesuai dengan yang telah disediakan
 	}
