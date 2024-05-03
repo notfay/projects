@@ -1,11 +1,11 @@
 
 **Assurance of Learning (AOL) Project for Algorithm and Programming (COMP6047001) - First Semester**
 
-**Project was given the Grade : 100 (A)**
+- **Project was given the Grade : 100 (A)**
 
 
 
-- As part of the Algorithm and Programming course in the first semester, the Assurance of Learning (AOL) project consisted of two tasks:
+As part of the Algorithm and Programming course in the first semester, the Assurance of Learning (AOL) project consisted of two tasks:
 
 1. **Reverse and Inverse String Function**:
    - Objective: Create a function that reverses the order of characters in a given string and inverses the case of alphabetic characters.
