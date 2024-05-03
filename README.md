@@ -1,7 +1,7 @@
 # College Project
  
 
-This folder consist of Solo Project for learning and AOL.
+This folder consist of Solo Projects and AOL.
 
 AOL Meaning:
 
