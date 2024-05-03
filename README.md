@@ -1,6 +1,5 @@
-# College Project
+# Project
  
-
 This folder consist of Solo Projects and AOL.
 
 AOL Meaning:
