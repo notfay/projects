@@ -1,5 +1,5 @@
 
-**Assurance of Learning (AOL) Project for Algorithm and Programming (COMP6047001) - First Semester**
+**Assurance of Learning (AOL) Project for Algorithm and Programming (COMP6047001) - First Semester** - **Project was given the Grade : 100 (A)**
 
 
 As part of the Algorithm and Programming course in the first semester, the Assurance of Learning (AOL) project consisted of two tasks:
@@ -18,6 +18,6 @@ As part of the Algorithm and Programming course in the first semester, the Assur
 
 These projects aimed to assess students' understanding of fundamental programming concepts including string manipulation, file handling, sorting algorithms, and search algorithms. They provided an opportunity for students to apply their knowledge in practical programming scenarios, laying the foundation for further learning and development in the field of computer science and software engineering.
 
-- **Project was given the Grade : 100 (A)**
+
 
  
