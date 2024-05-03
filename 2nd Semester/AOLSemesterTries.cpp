@@ -15,7 +15,7 @@
 
 // BNS, DG, SF
 typedef struct node {
-    struct node* children[ALPHABET_SIZE];
+    struct node* children[ALPHABET_SIZE];   //
     char description[50];
     char slang[25];
     int word;
@@ -24,7 +24,7 @@ typedef struct node {
 node* root = NULL;
 
 //DG. BNS
-node* createNode(const char description[],const char slang[]) {
+node* create(const char description[],const char slang[]) {
     node* head = (node*)malloc(sizeof(node));
     
     for(int i = 0; i < ALPHABET_SIZE; i++) {
@@ -45,7 +45,7 @@ node* insert(node* root, const char slang[], const char description[]) {
     node* head = root;
 
     if(root == NULL) {
-        root = createNode("", "");
+        root = create("", "");
         printf("*Added to the dictionary\n");
         head = root;
     }
@@ -54,7 +54,7 @@ node* insert(node* root, const char slang[], const char description[]) {
         index = slang[i] - 'a';
 
         if(head->children[index] == NULL) {
-            head->children[index] = createNode("", "");
+            head->children[index] = create("", "");
         }
 
         head = head->children[index];
@@ -73,11 +73,11 @@ node* insert(node* root, const char slang[], const char description[]) {
 //DG
 void display(node* root, char str[], int level) {
     if (root == NULL) {
-        printf("Currently Empty!, Please add slang to the dictionary!\n");
+        printf("Currently Empty!, Please add slang to the dictionary!\n"); //Jika di dictionary belum ada apa2,maka di display ini
         return;
     }
 
-    if (root->word) {
+    if (root->word) {       //
         str[level] = '\0';
         printf("\n- Slang: %s\n", str);
         printf("-Description: %s\n\n", root->description);
@@ -94,7 +94,7 @@ void display(node* root, char str[], int level) {
 //SF, DG
 int search(node* root, char* slang) {
    if(root == NULL) {
-    printf("\n*%s not Found\n\n", slang);
+    printf("\n*%s not Found\n\n", slang);   //Jika yg kita cari tidak ada di dictionary, maka dia akan diberikan pesan ini
     return 0;
    }
     node* head = root;
@@ -120,39 +120,39 @@ int search(node* root, char* slang) {
 }
 
 int countWords(const char* check) { 
-    int counter = 1, i; 
-    for(i = 0; check[i] != '\0'; i++) {
-        if(check[i] == ' ' && check[i+1] != ' ' && check[i+1] != '\0') {
-            counter++;
-        }
+    int counter = 1;     //loop ini untuk menentukan jumlah kalimat yang ada di string
+    for(int i = 0; check[i] != '\0'; i++) {  //akan looping mulai dari awal string sampai belum eol   
+        if(check[i] == ' ' && check[i+1] != ' ' && check[i+1] != '\0') {    //disini akan di loop sampai ada spasi, dan kata selanjutnya (i+1) bukan spasi dan bukan eol, maka counter bertambah (jadi tandanya itu adalah satu kata)
+            counter++;                  
+        }                               //semoga bisa dipahamin karena nge jelasinnya aga susah .-.
     }
-    return counter;
+    return counter;     //return counter ke main
 }
 
 int isValid(const char* slang) {
-    if (strlen(slang) < 2) {
+    if (strlen(slang) < 2) {    //cek apakah panjang string kurang dari 2, jika iya maka return 1
         return 1;
     }
 
-    for (int i = 0; i < strlen(slang); i++) {
-        if (isspace(slang[i])) {
+    for (int i = 0; i < strlen(slang); i++) {   //loop perkata samopai eol
+        if (isspace(slang[i])) {               //cek apakah ada spasi, menggunakan isspace yang dari library ctype.h, jika ditemukan spasi maka return 1
             return 1;
         }
     }
-    return 0;
+    return 0;       //jika tidak ada spasi dan panjang string lebih dari 2 maka return 0 (valid)
 }
 
 int main () {
-    int choice = 0;
+    int choice = 0; //pilihan menu
     
     do {
         printf("\n1. Release a new slang word\n");
         printf("2. Search a slang word\n");
-        printf("3. View all slang words starting with a certain prefix\n");
+        printf("3. View all slang words starting with a certain prefix\n");     //Opsi yang diberikan
         printf("4. View all slang words\n");
         printf("5. Exit\n");
 
-        printf("\nInput Choices : ");
+        printf("\nInput Choices : ");   //Input choice user
         scanf("%d", &choice);
         getchar(); // buffer
 
@@ -191,11 +191,11 @@ int main () {
                 scanf("%s", searchSlang);
             } while (isValid(searchSlang)); //sama seperti diatas, ini untuk memastikan inputan yang kita masukkan valid
 
-            search(root, searchSlang);
+            search(root, searchSlang);  //Setelah sesuai dengan syarat maka bisa lanjut untuk dicari 
         }
 
         if(choice == 4) {
-            char str[100];
+            char str[100];  
             display(root, str, 0);
         }
 
