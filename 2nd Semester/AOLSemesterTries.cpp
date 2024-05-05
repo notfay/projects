@@ -127,7 +127,7 @@ int search(node* root, char* slang) {
 int countWords(const char* check) { 
     int counter = 1;     //loop ini untuk menentukan jumlah kalimat yang ada di string
     for(int i = 0; check[i] != '\0'; i++) {  //akan looping mulai dari awal string sampai belum eol   
-        if(check[i] == ' ' && check[i+1] != ' ' && check[i+1] != '\0') {    //disini akan di loop sampai ada spasi, dan kata selanjutnya (i+1) bukan spasi dan bukan eol, maka counter bertambah (jadi tandanya itu adalah satu kata)
+        if(check[i] == ' ' && check[i+1] != ' ' && check[i+1] != '\0') {    //disini akan di loop  sampai ketemu spasi, dan dia ngecek apakah kata selanjutnya (i+1) bukan spasi dan bukan eol, maka counter bertambah (jadi tandanya itu adalah satu kata)
             counter++;                  
         }                               //semoga bisa dipahamin karena nge jelasinnya aga susah .-.
     }
