@@ -10,7 +10,7 @@
 //karena berhubung contoh kode belum ditunjukkan saya minta izin untuk mengambil referensi dari beberapa website
 
 //Reference from :
-// - BNS : https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fstbm7resourcesprod%2Eblob%2Ecore%2Ewindows%2Enet%3A443%2Fresources%2Fgeneral%5Fcourse%5Foutline%2Fcourse%5Foutline%2Fmain%5Fmaterial%2FRS1%2F024369%2F20240112105037D6660%5FSesi%252017%2520%2D%2520Trie%2Epptx%3Fsv%3D2020%2D08%2D04%26st%3D2024%2D05%2D03T04%253A00%253A18Z%26se%3D2024%2D05%2D03T10%253A15%253A18Z%26sr%3Db%26sp%3Dr%26sig%3DU5aFX8pX2fhc%252F3NJhtS4YKX0UZjGrs%252FIh0otwfAis6s%253D&wdSlideId=256&wdModeSwitchTime=1714709741926
+// - BNS : BINUS Data Structure - Trie PPT
 // - SF : https://www.sanfoundry.com/c-program-implement-trie/
 // - DG : https://www.digitalocean.com/community/tutorials/trie-data-structure-in-c-plus-plus
 // - TRGMBR : https://www.google.com/url?sa=i&url=https%3A%2F%2Fbootcamp.uxdesign.cc%2Fwhat-is-trie-data-structure-why-do-you-need-it-c11dbcdfa75b&psig=AOvVaw3N2HpeQjoJlhJvV4uYx25m&ust=1714964946002000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOj_lbXE9YUDFQAAAAAdAAAAABAE 
@@ -50,9 +50,8 @@ node* insert(node* root, const char slang[], const char description[]) {
 
     if(root == NULL) {  //apabila dictionary kosong
         root = create("", "");  //akan dibuat node baru, tapi dengan  isinya kosong terlebih dahulu
-                                 //karena pada awalan trie itu paling atas adalah root, lalu leafnya di isi dengan karakter alphabet (TRGMBR untuk referensi)
         head = root;    //dijadikan paling atas
-    }
+    }   //karena pada awalan trie itu paling atas adalah root, lalu leafnya di isi dengan karakter alphabet (TRGMBR untuk referensi)
 
     //masuk ke else apabila sudah ada
 
@@ -82,8 +81,8 @@ node* insert(node* root, const char slang[], const char description[]) {
 
 
 //DG
-void display(node* root, char str[], int level) {
-    if (root == NULL) {
+void display(node* root, char str[], int level) { 
+    if (root == NULL) { //parameter level itu nentuin di level / kedalaman berapa dia ,  str itu untuk menyimpan gabungan dari node-node yang ada di dictionary
         printf("Currently Empty!, Please add slang to the dictionary!\n"); //Jika di dictionary belum ada apa2,maka di display ini
         return;
     }
@@ -108,7 +107,7 @@ int search(node* root, char* slang) {
     printf("\n*%s not Found\n\n", slang);   //Jika yg kita cari tidak ada di dictionary, maka dia akan diberikan pesan ini
     return 0;
    }
-    node* head = root;
+    node* head = root;  //sma sperti di linkedlist yang menggunakan node* ptr tapi saya menggunakan head
     int len = strlen(slang);    //Menghitung panjang slang
 
     for(int i = 0; i < len; i++) {  //Looping setiap karakter pada string slang
@@ -206,9 +205,23 @@ int main () {
             search(root, searchSlang);  //Setelah sesuai dengan syarat maka bisa lanjut untuk dicari 
         }
 
+        if(choice == 3 ) {
+            //search by prefix
+        }
+
         if(choice == 4) {
             char str[100];  
             display(root, str, 0);
+        }
+        
+        if(choice == 6) {
+
+            system("cls");
+            printf("Sebelumnya saya juga udah pernah buat project ini menggunakan bst, karena saya kira trie itu sama aja kaya tree, ternyata beda\n\n");
+            printf("Untuk melihat yang versi bst (belum complete tapi) bisa melalu link ini : \n\"https://github.com/notfay/projects/blob/main/2nd%%20Semester/AOLSemester2BST.cpp\"  ( bismillah tambahan point :) ) \n");
+            printf("\n\nAda pepatah juga yang pernah menyebutkan, \"When i wrote this code, only God and I understood what it did. Now, only God knows\" \n");
+        
+            break;
         }
 
     } while(choice != 5);
