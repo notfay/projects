@@ -21,7 +21,7 @@ typedef struct node {
     struct node* children[ALPHABET_SIZE];   //Ini memasukkan nodenya setiap karakter
     char description[50];       //Deskripsi slang
     char slang[25]; //Slangnya
-    int word;   //cek apakah dia di akhir kata atau bukan // nge flag
+    int word;   //untuk cek apakah dia di akhir kata atau bukan // nge flag
 } node;
 
 node* root = NULL;  //global variabel set root ke NULL
@@ -63,6 +63,11 @@ node* insert(node* root, const char slang[], const char description[]) {
         }
 
         head = head->children[index]; //sama saja kaya traverse di linkedlist, tapi dia akan traverse di setiap karakter 
+    }
+
+    if(head->word) {
+        strcpy(head->description, description);
+        printf("%s already exist!, updated the description\n", slang); //apabila kata yang diinput sudah ada, maka deskripsi akan diupdate
     }
 
     head->word = 1; //flagged, tandanya udh di akhir kata
