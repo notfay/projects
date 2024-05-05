@@ -1,2 +1,1 @@
-
-    struct node* left;
+Currently Empty! Please add slang to the dictionary!

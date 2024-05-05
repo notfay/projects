@@ -74,7 +74,7 @@ node* insert(node* root, const char slang[], const char description[]) {
 
     strcpy(head->description, description); //memasukkan deskripsi  yang user input ke dalam ndoenya
     strcpy(head->slang, slang); //memasukkan slang yang user input ke dalam node
-    printf(" %s Added to the dictionary\n", slang); 
+    printf("\n%s Added to the dictionary\n", slang); 
 
     return root;
 }
@@ -128,6 +128,53 @@ int search(node* root, char* slang) {
 
     return 0;
 }
+
+
+void searchPrefixRecursive(node* root, char searchSlang[], int n, char prefix[]) {
+    if(root->word == 1) {   //Jika sudah di akhir kata, maka akan di display semua gabungan node slangnya dan deskripsi
+        searchSlang[n] = '\0'; //Menambahkan null terminator untuk mengakhiri string
+        printf("Slang : %s%s\n", prefix, searchSlang);
+        printf("Desciption : %s\n\n", root->description); 
+    }
+
+    for(int i = 0; i < ALPHABET_SIZE; i++) { //Looping ke semua yg ada di dictionary
+        if(root->children[i] != NULL) { //cek apakah ada anak pada posisi indeks i
+            searchSlang[n] = 'a' + i; //nambahkan karakter yang sesuai ke dalam array searchSlang
+            searchPrefixRecursive(root->children[i], searchSlang, n + 1, prefix);
+        }
+    }
+}
+
+
+//BNS
+void searchPrefix(node* root, char prefix[]) {
+    if(root == NULL) {
+        printf("Currently Empty! Please add slang to the dictionary!\n");   //Kalo gaada apa2 dikasih pesan ini
+        return;
+    }
+
+    int n = strlen(prefix);
+    node* head = root;
+    int last = 0; //flag untuk menandai apakah prefix tidak ditemukan dalam dictionary
+
+    for(int i = 0; i < n && last == 0; i++) {
+        int index = prefix[i] - 'a'; //menghitung indeks berdasarkan karakter slang yang diinput
+        if(head->children[index] == NULL) { // cek, jika tidak ada anak pada indeks yang diberikan / NULL
+            printf("There is no prefix \"%s\" in the dictionary.\n", prefix); 
+            last = 1; //berarti gaada di dictionary 
+        } else { 
+            head = head->children[index]; //traverse ke yang sesuai dengan karakter slang
+        }
+    }
+
+    if (!last) { //Jika ada
+        printf("Words starts with \"%s\":\n", prefix); //Maka akan di display 
+        char searchSlang[25]; //Buffer untuk penyimpanan sementara kata yang ditemukan
+        searchPrefixRecursive(head, searchSlang, 0, prefix); //Recursion, prosesnya diulang, untuk gabungin semua karakter yang ada di dictionary
+    }
+}
+
+
 
 int countWords(const char* check) { 
     int counter = 1;     //loop ini untuk menentukan jumlah kalimat yang ada di string
@@ -206,8 +253,13 @@ int main () {
         }
 
         if(choice == 3 ) {
-            //search by prefix
+            char prefix[25];  // Ini adalah prefix yang ingin kita cari
+            printf("\nInput a prefix to be searched: ");
+            scanf("%s", prefix);
+
+            searchPrefix(root, prefix);
         }
+
 
         if(choice == 4) {
             char str[100];  
