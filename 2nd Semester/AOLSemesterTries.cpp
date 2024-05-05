@@ -49,7 +49,7 @@ node* insert(node* root, const char slang[], const char description[]) {
 
     if(root == NULL) {  //apabila dictionary kosong
         root = create("", "");  //akan dibuat node baru, tapi dengan  isinya kosong terlebih dahulu
-        printf("*Added to the dictionary\n");   //karena pada awalan trie itu paling atas adalah root, lalu leafnya di isi dengan karakter alphabet (TRGMBR untuk referensi)
+                                 //karena pada awalan trie itu paling atas adalah root, lalu leafnya di isi dengan karakter alphabet (TRGMBR untuk referensi)
         head = root;    //dijadikan paling atas
     }
 
@@ -67,14 +67,14 @@ node* insert(node* root, const char slang[], const char description[]) {
 
     if(head->word) {
         strcpy(head->description, description);
-        printf("%s already exist!, updated the description\n", slang); //apabila kata yang diinput sudah ada, maka deskripsi akan diupdate
+        printf("and updated the description\n", slang); //apabila kata yang diinput sudah ada, maka deskripsi akan diupdate
     }
 
     head->word = 1; //flagged, tandanya udh di akhir kata
 
     strcpy(head->description, description); //memasukkan deskripsi  yang user input ke dalam ndoenya
     strcpy(head->slang, slang); //memasukkan slang yang user input ke dalam node
-    printf("*Added to the dictionary\n"); 
+    printf(" %s Added to the dictionary\n", slang); 
 
     return root;
 }
@@ -87,16 +87,16 @@ void display(node* root, char str[], int level) {
         return;
     }
 
-    if (root->word) {       //
-        str[level] = '\0';
-        printf("\n- Slang: %s\n", str);
-        printf("-Description: %s\n\n", root->description);
+    if (root->word) {       //Jika sudah di akhir kata, maka akan di display semua gabungan node slangnya dan deskripsi
+        str[level] = '\0';  //Menambahkan null terminator untuk mengakhiri string
+        printf("\n- Slang: %s\n", str); //Slang di dictionary di display 
+        printf("-Description: %s\n\n", root->description); //Deskripsi di display juga
     }
 
-    for (int i = 0; i < ALPHABET_SIZE; i++) {
-        if (root->children[i]) {
-            str[level] = i + 'a';
-            display(root->children[i], str, level + 1);
+    for (int i = 0; i < ALPHABET_SIZE; i++) {   //Looping ke semua yg ada di dictionary
+        if (root->children[i]) {    //Jika ada di dictionary
+            str[level] = i + 'a'; //Menggabungkan karakter yang ada di dictionary
+            display(root->children[i], str, level + 1); //Recursion, prosesnya diulang, untuk gabungin semua karakter yang ada di dictionary
         }
     }
 }
@@ -155,6 +155,7 @@ int isValid(const char* slang) {
 int main () {
     int choice = 0; //pilihan menu
     
+
     do {
         printf("\n1. Release a new slang word\n");
         printf("2. Search a slang word\n");
@@ -189,8 +190,8 @@ int main () {
                 scanf(" %[^\n]", addDesc);                      //disini akan diminta untuk input deskripsi, dan akan di loop terus sampai syarat dibawah terpenuhi
             } while(countWords(addDesc) < 3);            //deskripsi yang telah diinput akan di cek di function ini apa sudah memenuhi syaratnya          
 
-            root = insert(root, addSlang, addDesc);
-            system("cls");
+            root = insert(root, addSlang, addDesc);     //akhirnya akan dimasukkan ke dalam dictionary
+            
         }
 
         if(choice == 2) {
