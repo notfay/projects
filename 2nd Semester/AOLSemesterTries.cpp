@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 //Stored in GitHub, projects>2nd Semester > AOLSemester2Tries.cpp
+//To-Do : Menu search by prefix 
 
 //Sebelumnya soal ini saya buat juga dengan metode BST, karena saya kira kalau trie dan tree itu sama saja
 //karena berhubung contoh kode belum ditunjukkan saya minta izin untuk mengambil referensi dari beberapa website
@@ -21,7 +22,7 @@ typedef struct node {
     struct node* children[ALPHABET_SIZE];   //Ini memasukkan nodenya setiap karakter
     char description[50];       //Deskripsi slang
     char slang[25]; //Slangnya
-    int word;   //untuk cek apakah dia di akhir kata atau bukan // nge flag
+    int word;   //untuk cek apakah dia di akhir kata atau bukan // nge flag, 0 berarti gaada dan 1 berarti ada
 } node;
 
 node* root = NULL;  //global variabel set root ke NULL
@@ -44,7 +45,7 @@ node* create(const char description[],const char slang[]) { //harus menggunakan 
 //DG, SF, TRGMBR
 node* insert(node* root, const char slang[], const char description[]) {    
     int len = strlen(slang);    //menghitung panjang slang untuk bisa di loop
-    int index;  
+    int index;  //nentuin dimana posisi node baru dan yang bakalan dimasukkin ke dalam dictionary
     node* head = root;
 
     if(root == NULL) {  //apabila dictionary kosong
@@ -108,20 +109,20 @@ int search(node* root, char* slang) {
     return 0;
    }
     node* head = root;
-    int len = strlen(slang);
+    int len = strlen(slang);    //Menghitung panjang slang
 
-    for(int i = 0; i < len; i++) {
-        int index = slang[i] - 'a';
+    for(int i = 0; i < len; i++) {  //Looping setiap karakter pada string slang
+        int index = slang[i] - 'a';  //menghitung indeks berdasarkan karakter slang yang diinput
 
-        if(head->children[index] == NULL) {
-            return 0;
+        if(head->children[index] == NULL) { // cek, jika tidak ada anak pada indeks yang diberikan / NULL
+            return 0; //berarti gaada di dictionary
         }
 
-        head = head->children[index];
+        head = head->children[index]; //traverse ke yang sesuai dengan karakter slang
     }
 
-    if(head != NULL && head->word == 1) {
-        printf("-Slang: %s\n", head->slang);
+    if(head != NULL && head->word == 1) { //Jika ditemukan dan di akhir kata
+        printf("-Slang: %s\n", head->slang);    //Akan di display 
         printf("-Description: %s\n", head->description);
         return 1;
     }
