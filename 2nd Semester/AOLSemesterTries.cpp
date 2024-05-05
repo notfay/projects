@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+//Stored in GitHub, projects>2nd Semester > AOLSemester2Tries.cpp
+
 //Sebelumnya soal ini saya buat juga dengan metode BST, karena saya kira kalau trie dan tree itu sama saja
 //karena berhubung contoh kode belum ditunjukkan saya minta izin untuk mengambil referensi dari beberapa website
 
@@ -10,61 +12,64 @@
 // - BNS : https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fstbm7resourcesprod%2Eblob%2Ecore%2Ewindows%2Enet%3A443%2Fresources%2Fgeneral%5Fcourse%5Foutline%2Fcourse%5Foutline%2Fmain%5Fmaterial%2FRS1%2F024369%2F20240112105037D6660%5FSesi%252017%2520%2D%2520Trie%2Epptx%3Fsv%3D2020%2D08%2D04%26st%3D2024%2D05%2D03T04%253A00%253A18Z%26se%3D2024%2D05%2D03T10%253A15%253A18Z%26sr%3Db%26sp%3Dr%26sig%3DU5aFX8pX2fhc%252F3NJhtS4YKX0UZjGrs%252FIh0otwfAis6s%253D&wdSlideId=256&wdModeSwitchTime=1714709741926
 // - SF : https://www.sanfoundry.com/c-program-implement-trie/
 // - DG : https://www.digitalocean.com/community/tutorials/trie-data-structure-in-c-plus-plus
+// - TRGMBR : https://www.google.com/url?sa=i&url=https%3A%2F%2Fbootcamp.uxdesign.cc%2Fwhat-is-trie-data-structure-why-do-you-need-it-c11dbcdfa75b&psig=AOvVaw3N2HpeQjoJlhJvV4uYx25m&ust=1714964946002000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOj_lbXE9YUDFQAAAAAdAAAAABAE 
 
 #define ALPHABET_SIZE 26
 
 // BNS, DG, SF
 typedef struct node {
-    struct node* children[ALPHABET_SIZE];   //
-    char description[50];
-    char slang[25];
-    int word;
+    struct node* children[ALPHABET_SIZE];   //Ini memasukkan nodenya setiap karakter
+    char description[50];       //Deskripsi slang
+    char slang[25]; //Slangnya
+    int word;   //cek apakah dia di akhir kata atau bukan // nge flag
 } node;
 
-node* root = NULL;
+node* root = NULL;  //global variabel set root ke NULL
 
 //DG. BNS
-node* create(const char description[],const char slang[]) {
-    node* head = (node*)malloc(sizeof(node));
+node* create(const char description[],const char slang[]) { //harus menggunakan const char* kalau tidak akan mendapatkan error ini OLSemester2.cpp:63:43: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings] AOLSemester2.cpp:64:46: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings] root = insert(root, "LMAO", "Laughing My");
+    node* head = (node*)malloc(sizeof(node));   //Mengalokasikan memori untuk node
     
-    for(int i = 0; i < ALPHABET_SIZE; i++) {
-        head->children[i] = NULL;
+    for(int i = 0; i < ALPHABET_SIZE; i++) {   //Looping untuk setiap karakter
+        head->children[i] = NULL;           //sama seperti di bst dan linked list kita akan null kan setiap karakternya
     }
 
-    head->word = 0;
-    strcpy(head->description, description);
-    strcpy(head->slang, slang);
+    head->word = 0; 
+    strcpy(head->description, description); //copy deskripsi ke node, seperti di bst dan linkedlist
+    strcpy(head->slang, slang); //copy slang ke node, seperti di bst dan linkedlist
 
     return head;
 }
 
-//DG, SF
-node* insert(node* root, const char slang[], const char description[]) {
-    int len = strlen(slang);
-    int index;
+//DG, SF, TRGMBR
+node* insert(node* root, const char slang[], const char description[]) {    
+    int len = strlen(slang);    //menghitung panjang slang untuk bisa di loop
+    int index;  
     node* head = root;
 
-    if(root == NULL) {
-        root = create("", "");
-        printf("*Added to the dictionary\n");
-        head = root;
+    if(root == NULL) {  //apabila dictionary kosong
+        root = create("", "");  //akan dibuat node baru, tapi dengan  isinya kosong terlebih dahulu
+        printf("*Added to the dictionary\n");   //karena pada awalan trie itu paling atas adalah root, lalu leafnya di isi dengan karakter alphabet (TRGMBR untuk referensi)
+        head = root;    //dijadikan paling atas
     }
 
-    for(int i = 0; i < len; i++) {
-        index = slang[i] - 'a';
+    //masuk ke else apabila sudah ada
 
-        if(head->children[index] == NULL) {
-            head->children[index] = create("", "");
+    for(int i = 0; i < len; i++) {  //Looping setiap karakter pada string slang
+        index = slang[i] - 'a'; // menghitung indeks berdasarkan karakter slang yang diinput 
+
+        if(head->children[index] == NULL) { // cek, jika tidak ada anak pada indeks yang diberikan / NULL
+            head->children[index] = create("", ""); //dibuat node dengan isinya kosong terlebih dahulu yang nantinya akan diisi oleh slang dan deskripsi  
         }
 
-        head = head->children[index];
+        head = head->children[index]; //sama saja kaya traverse di linkedlist, tapi dia akan traverse di setiap karakter 
     }
 
+    head->word = 1; //flagged, tandanya udh di akhir kata
 
-    head->word = 1;
-    strcpy(head->description, description);
-    strcpy(head->slang, slang);
-    printf("*Added to the dictionary\n");
+    strcpy(head->description, description); //memasukkan deskripsi  yang user input ke dalam ndoenya
+    strcpy(head->slang, slang); //memasukkan slang yang user input ke dalam node
+    printf("*Added to the dictionary\n"); 
 
     return root;
 }
@@ -167,7 +172,7 @@ int main () {
             } while (isValid(addSlang));
 
             // do {
-            // printf("Input a new slang word [Must be more than 1 characters and contains no space] :\n-");   //Bug disini dimana saat kita input "d a" output ini akan double
+            // printf("Input a new slang word [Must be more than 1 characters and contains no space] :\n-");           //Bug disini dimana saat kita input "d a" output ini akan double
             //scanf("%s", addSlang); 
             // } while (isValid(addSlang));
 
