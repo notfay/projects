@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 //Stored in GitHub, projects>2nd Semester > AOLSemester2Tries.cpp
-//To-Do : Menu search by prefix 
+//To-Do : 
 
 //Sebelumnya soal ini saya buat juga dengan metode BST, karena saya kira kalau trie dan tree itu sama saja
 //karena berhubung contoh kode belum ditunjukkan saya minta izin untuk mengambil referensi dari beberapa website
@@ -89,7 +89,7 @@ void display(node* root, char str[], int level) {
 
     if (root->word) {       //Jika sudah di akhir kata, maka akan di display semua gabungan node slangnya dan deskripsi
         str[level] = '\0';  //Menambahkan null terminator untuk mengakhiri string
-        printf("\n- Slang: %s\n", str); //Slang di dictionary di display 
+        printf("\n-Slang: %s\n", str); //Slang di dictionary di display 
         printf("-Description: %s\n\n", root->description); //Deskripsi di display juga
     }
 
@@ -104,7 +104,7 @@ void display(node* root, char str[], int level) {
 //SF, DG
 int search(node* root, char* slang) {
    if(root == NULL) {
-    printf("\n*%s not Found\n\n", slang);   //Jika yg kita cari tidak ada di dictionary, maka dia akan diberikan pesan ini
+    printf("\nError: %s not Found\n\n", slang);   //Jika yg kita cari tidak ada di dictionary, maka dia akan diberikan pesan ini
     return 0;
    }
     node* head = root;  //sma sperti di linkedlist yang menggunakan node* ptr tapi saya menggunakan head
@@ -114,6 +114,7 @@ int search(node* root, char* slang) {
         int index = slang[i] - 'a';  //menghitung indeks berdasarkan karakter slang yang diinput
 
         if(head->children[index] == NULL) { // cek, jika tidak ada anak pada indeks yang diberikan / NULL
+            printf("\nError: %s not Found\n\n", slang);
             return 0; //berarti gaada di dictionary
         }
 
@@ -121,7 +122,7 @@ int search(node* root, char* slang) {
     }
 
     if(head != NULL && head->word == 1) { //Jika ditemukan dan di akhir kata
-        printf("-Slang: %s\n", head->slang);    //Akan di display 
+        printf("\n-Slang: %s\n", head->slang);    //Akan di display 
         printf("-Description: %s\n", head->description);
         return 1;
     }
@@ -133,8 +134,8 @@ int search(node* root, char* slang) {
 void searchPrefixRecursive(node* root, char searchSlang[], int n, char prefix[]) {
     if(root->word == 1) {   //Jika sudah di akhir kata, maka akan di display semua gabungan node slangnya dan deskripsi
         searchSlang[n] = '\0'; //Menambahkan null terminator untuk mengakhiri string
-        printf("Slang : %s%s\n", prefix, searchSlang);
-        printf("Desciption : %s\n\n", root->description); 
+        printf("\n-Slang : %s%s\n", prefix, searchSlang);
+        printf("-Desciption : %s\n\n", root->description); 
     }
 
     for(int i = 0; i < ALPHABET_SIZE; i++) { //Looping ke semua yg ada di dictionary
@@ -160,7 +161,7 @@ void searchPrefix(node* root, char prefix[]) {
     for(int i = 0; i < n && last == 0; i++) {
         int index = prefix[i] - 'a'; //menghitung indeks berdasarkan karakter slang yang diinput
         if(head->children[index] == NULL) { // cek, jika tidak ada anak pada indeks yang diberikan / NULL
-            printf("There is no prefix \"%s\" in the dictionary.\n", prefix); 
+            printf("Error: There is no prefix \"%s\" in the dictionary.\n", prefix); 
             last = 1; //berarti gaada di dictionary 
         } else { 
             head = head->children[index]; //traverse ke yang sesuai dengan karakter slang
@@ -168,7 +169,7 @@ void searchPrefix(node* root, char prefix[]) {
     }
 
     if (!last) { //Jika ada
-        printf("Words starts with \"%s\":\n", prefix); //Maka akan di display 
+        printf("\nWords starts with \"%s\":\n", prefix); //Maka akan di display 
         char searchSlang[25]; //Buffer untuk penyimpanan sementara kata yang ditemukan
         searchPrefixRecursive(head, searchSlang, 0, prefix); //Recursion, prosesnya diulang, untuk gabungin semua karakter yang ada di dictionary
     }
@@ -217,6 +218,7 @@ int main () {
         if(choice == 1) {
             char addSlang[25];
             char addDesc[100];
+            system("cls");
 
             do {
                 printf("\nInput a new slang word [Must be more than 1 characters and contains no space] :\n-");
@@ -238,18 +240,31 @@ int main () {
             } while(countWords(addDesc) < 3);            //deskripsi yang telah diinput akan di cek di function ini apa sudah memenuhi syaratnya          
 
             root = insert(root, addSlang, addDesc);     //akhirnya akan dimasukkan ke dalam dictionary
+
+            printf("\nPress enter to continue... ");
+            while(getchar() != '\n');
+            getchar();
+            system("cls");
             
         }
 
         if(choice == 2) {
             char searchSlang[25];   //Ini adalah slang yang ingin kita cari 
+           
 
             do {
                 printf("Input slang word to search [Must be more than 1 characters and contains no space] : ");
-                scanf("%s", searchSlang);
+                fgets(searchSlang, sizeof(searchSlang), stdin); //sama seperti scanf, fgets digunakan untuk input string, tapi fgets i mengambil inputan sampai eol, dan tidak akan mengambil inputan yang berlebihan
+                searchSlang[strcspn(searchSlang, "\n")] = '\0';
             } while (isValid(searchSlang)); //sama seperti diatas, ini untuk memastikan inputan yang kita masukkan valid
 
             search(root, searchSlang);  //Setelah sesuai dengan syarat maka bisa lanjut untuk dicari 
+
+            printf("\nPress enter to continue... ");
+            while(getchar() != '\n');
+            getchar();
+            system("cls");
+
         }
 
         if(choice == 3 ) {
@@ -258,12 +273,22 @@ int main () {
             scanf("%s", prefix);
 
             searchPrefix(root, prefix);
+
+            printf("\nPress enter to continue... ");
+            while(getchar() != '\n');
+            getchar();
+            system("cls");
         }
 
 
         if(choice == 4) {
-            char str[100];  
-            display(root, str, 0);
+            char str[100]; 
+            display(root, str, 0); 
+
+            printf("\nPress enter to continue... ");
+            while(getchar() != '\n');
+            getchar();
+            system("cls");
         }
         
         if(choice == 6) {
@@ -271,7 +296,7 @@ int main () {
             system("cls");
             printf("Sebelumnya saya juga udah pernah buat project ini menggunakan bst, karena saya kira trie itu sama aja kaya tree, ternyata beda\n\n");
             printf("Untuk melihat yang versi bst (belum complete tapi) bisa melalu link ini : \n\"https://github.com/notfay/projects/blob/main/2nd%%20Semester/AOLSemester2BST.cpp\"  ( bismillah tambahan point :) ) \n");
-            printf("\n\nAda pepatah juga yang pernah menyebutkan, \"When i wrote this code, only God and I understood what it did. Now, only God knows\" \n");
+            printf("\n\nUntuk mengakhiri ada pepatah yang pernah menyebutkan, \"When i wrote this code, only God and I understood what it did. Now, only God knows\" \n");
         
             break;
         }
@@ -280,6 +305,5 @@ int main () {
   
     printf("Thank you... Have a nice day :)\n");
    
-    
     return 0; 
 }
