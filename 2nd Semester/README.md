@@ -1,4 +1,4 @@
-Data Structures
+Data Structures AOL Project | Project Grade : 94 (A)
 
 In the second semester, students delve into Data Structures (COMP6048001) using C. Throughout this course, students learn about various fundamental data structures such as linked lists, stacks, queues, hash tables, binary trees, and other related concepts. These structures serve as the building blocks for organizing and managing data efficiently. 
 
