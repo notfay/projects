@@ -1,18 +1,273 @@
+:root {
+    --white: #FFFFFF;
+    --black: #1B1B1B; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 124px; /* Set the height of the navbar */
+    background-color: var(--white);
+    z-index: 1000;
+    border-bottom: 1px solid #00000026;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Adjust the width to be responsive */
+    max-width: 1440px; /* Set the max width */
+    height: 100%; /* Ensure the wrapper takes the full height of the header */
+    padding: 0 20px; /* Adjust padding for responsiveness */
+    margin: 0 auto; /* Center the wrapper */
+}
+
+.logo {
+    width: 182px;
+    height: 60px;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Ensure the text does not wrap */
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ensure items are aligned to the right */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Adjust gap for responsiveness */
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li:nth-child(1) {
+    margin-right: 61px; /* Gap between product and event */
+}
+
+nav ul li:nth-child(2) {
+    margin-right: 47px; /* Gap between event and SVG icon */
+}
+
+nav ul li a {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0%;
+    color: var(--black);
+    text-decoration: none;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--black);
+    display: block;
+    margin: auto;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+nav ul li a img {
+    width: 46px;
+    height: 46px;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 999px; /* Adjust the height to account for the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px; /* Add padding to move the image lower */
+}
+
+.hero-image {
+    width: 70%; /* Make the image take the full width */
+    max-width: 1440px; /* Set the max width */
+    height: 807px;
+    border-radius: 15px;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7));
+    border: 1px solid #FFFFFF; /* Adjust the border color as needed */
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Add shadow to the image */
+}
+
+.hero-text {
+    position: absolute;
+    width: 681px;
+    height: 300px;
+    top: 383px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-size: 140px;
+    line-height: 210px;
+    letter-spacing: 0%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2; /* Ensure the text is above the overlay */
+}
+
 .poppins-medium {
     font-family: "Poppins", serif;
     font-weight: 500;
     font-style: normal;
-  }
-  
-  .poppins-semibold {
+}
+
+.poppins-semibold {
     font-family: "Poppins", serif;
     font-weight: 600;
     font-style: normal;
-  }
-  
-  .poppins-bold {
+}
+
+.poppins-bold {
     font-family: "Poppins", serif;
     font-weight: 700;
     font-style: normal;
-  }
-  
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1668px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    nav ul {
+        gap: 20px;
+        justify-content: flex-start; /* Move items to the left */
+    }
+
+    .nav-container {
+        justify-content: flex-start; /* Move container to the left */
+    }
+
+    nav ul li:nth-child(1) {
+        margin-right: 35px; /* Gap between product and event */
+    }
+
+    nav ul li:nth-child(2) {
+        margin-right: 45px; /* Gap between event and SVG icon */
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .hero-section {
+        padding-top: 20px;
+    }
+
+    .hero-image {
+        width: 70%; /* Make the image take the full width */
+        max-width: 1440px; /* Set the max width */
+        height: auto;
+    }
+
+    .hero-text {
+        width: 90%;
+        font-size: 80px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* Media query for screens below 768px */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    nav ul {
+        gap: 10px; /* Reduce gap for smaller screens */
+        justify-content: flex-start; /* Move items to the left */
+    }
+
+    .nav-container {
+        justify-content: flex-start; /* Move container to the left */
+    }
+
+    nav ul li:nth-child(1) {
+        margin-right: 30px; /* Gap between product and event */
+    }
+
+    nav ul li:nth-child(2) {
+        margin-right: 40px; /* Gap between event and SVG icon */
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .hero-section {
+        padding-top: 20px;
+    }
+
+    .hero-image {
+        width: 90%; /* Make the image take the full width */
+        max-width: 1440px; /* Set the max width */
+        height: auto;
+        top: -100px;
+    }
+
+    .hero-text {
+        width: 90%;
+        font-size: 80px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
