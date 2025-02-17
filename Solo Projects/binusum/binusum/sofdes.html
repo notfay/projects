@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>BINUS SUM - Summary BINUS Material Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha384-RxV/MO0i0x05KP/kpZ1I3fO7ShJxwhh+1VV+0tFfVY3R+4dOjDZI/a6f5zHe92Y4" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo1.png"></a>
+            <div class="nav-links" id="navLinks">
+               <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">COURSE</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    
+    <div class="text-box">
+        <h1>BINUS MATERIAL SUMMARY</h1>
+        <p>Website That Has Material Summary From Binus University, <br>Especially Computer Science Major</p>
+        <a href="" class="hei-btn">Visit Us To Know More</a>
+    </div>
+    </section>
+
+    <!-- --------- Call To Action --------- -->
+
+    <section class="cta">
+        <h1>Discover Binus Material Summaries Easily<br>at Anytime and Anywhere</h1>
+        <a href="" class="hei-btn">CONTACT US</a>
+    </section>
+
+    <!-- ------ Footer -------- -->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur explicabo minus delectus iusto harum<br>aperiam et qui magni necessitatibus veritatis laboriosam ducimus ab enim, saepe vero possimus hic corporis?</p>
+        <div class="icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p>Made with love<i class="fa fa-linkedin"></i> by Yonzi</p>
+    </section>
+
+    <!-- -----------Java Script Menu-------------- -->
+
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        const courseCols = document.querySelectorAll('.course-col');
+
+        // Function to reset styles
+        function resetCourseStyles() {
+            courseCols.forEach(courseCol => {
+                courseCol.classList.remove('active'); // Remove any 'active' class
+            });
+        }
+
+        // Call reset function on page load (including back button)
+        window.addEventListener('load', resetCourseStyles);
+
+
+    </script>
+
+</body>
+</html>
+
+
+
