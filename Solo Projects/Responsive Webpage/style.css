@@ -13,7 +13,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 124px; /* Set the height of the navbar */
+    height: 80px; /* Set the height of the navbar */
     background-color: var(--white);
     z-index: 1000;
     border-bottom: 1px solid #00000026;
@@ -31,12 +31,12 @@ header {
 }
 
 .logo {
-    width: 182px;
-    height: 60px;
+    width: 150px; /* Reduced width */
+    height: 50px; /* Reduced height */
     font-family: "Poppins", serif;
     font-weight: 600;
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 30px; /* Reduced font size */
+    line-height: 50px; /* Adjusted line height */
     letter-spacing: 0%;
     display: flex;
     align-items: center;
@@ -46,7 +46,7 @@ header {
 
 nav {
     display: flex;
-    padding: 2% 6%;
+    padding: 1% 4%;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
@@ -82,8 +82,8 @@ nav ul li:nth-child(2) {
 nav ul li a {
     font-family: "Poppins", serif;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 30px;
     letter-spacing: 0%;
     color: var(--black);
     text-decoration: none;
@@ -105,8 +105,8 @@ nav ul li a:hover::after {
 
 
 nav ul li a img {
-    width: 46px;
-    height: 46px;
+    width: 36px;
+    height: 36px;
 }
 
 .hero-section {
@@ -201,7 +201,7 @@ nav ul li a img {
     }
 
     .hero-section {
-        padding-top: 20px;
+        padding-top: 0px;
     }
 
     .hero-image {
@@ -253,14 +253,14 @@ nav ul li a img {
     }
 
     .hero-section {
-        padding-top: 20px;
+        padding-top: 0px;
     }
 
     .hero-image {
         width: 100%; /* Make the image take the full width */
         max-width: 1440px; /* Set the max width */
         height: auto;
-        top: -100px;
+        top: -200px;
     }
 
     .hero-text {
