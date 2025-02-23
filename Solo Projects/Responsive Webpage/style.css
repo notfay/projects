@@ -76,7 +76,7 @@ nav ul li:nth-child(1) {
 }
 
 nav ul li:nth-child(2) {
-    margin-right: 47px; /* Gap between event and SVG icon */
+    margin-right: 47px; /* Gap between event and Cart */
 }
 
 nav ul li a {
@@ -87,6 +87,7 @@ nav ul li a {
     letter-spacing: 0%;
     color: var(--black);
     text-decoration: none;
+    position: relative;
 }
 
 nav ul li a::after {
@@ -103,11 +104,7 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-
-nav ul li a img {
-    width: 36px;
-    height: 36px;
-}
+/* HERO SECTION */
 
 .hero-section {
     position: relative;
@@ -117,26 +114,64 @@ nav ul li a img {
     justify-content: center;
     align-items: center;
     padding-top: 50px; /* Add padding to move the image lower */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
 }
 
-.hero-image {
+.hero-image, .hero-image2, .hero-image3, .hero-image4, .hero-image5, .hero-image6 {
+    position: absolute;
     width: 100%; /* Make the image take the full width */
-    max-width: 1440px; /* Set the max width */
-    height: 807px;
-    border-radius: 0    ;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7));
-    border: 1px solid #FFFFFF; /* Adjust the border color as needed */
-    position: relative;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Add shadow to the image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire area without stretching */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    opacity: 0; /* Start with the image hidden */
+    animation: fade 30s infinite; /* Apply the fade animation */
 }
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/homepagemain.jpg'); /* Add your image URL here */
+}
+
+.hero-image2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-2.jpg'); /* Add your image URL here */
+    animation-delay: 5s; /* Delay the start of the animation */
+}
+
+.hero-image3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-3.jpg'); /* Add your image URL here */
+    animation-delay: 10s; /* Delay the start of the animation */
+}
+
+.hero-image4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-4.jpeg'); /* Add your image URL here */
+    animation-delay: 15s; /* Delay the start of the animation */
+}
+
+.hero-image5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-5.jpg'); /* Add your image URL here */
+    animation-delay: 20s; /* Delay the start of the animation */
+}
+
+.hero-image6 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-6.jpg'); /* Add your image URL here */
+    animation-delay: 25s; /* Delay the start of the animation */
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    16.66% { opacity: 1; }
+    33.33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
 
 .hero-text {
     position: absolute;
-    width: 681px;
-    height: 300px;
-    top: 383px;
+    width: 100%; /* Make the text container take the full width */
+    height: auto; /* Adjust the height as needed */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%); /* Center the text horizontally and vertically */
     font-family: "Poppins", serif;
     font-weight: 700;
     font-size: 140px;
@@ -147,8 +182,136 @@ nav ul li a img {
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-direction: column; /* Stack the text vertically */
     z-index: 2; /* Ensure the text is above the overlay */
 }
+
+.hero-subtext {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    color: var(--white);
+    text-align: center;
+    margin-top: 100px; /* Add some space between the main text and the subtext */
+}
+
+/* NEW COLLECTIONS */
+
+.new-collection-section {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    position: absolute;
+    top: 1155px; /* Position 121px below the hero section */
+    left: 66px; /* Position 74px from the left */
+    width: 382px; /* Adjust width to account for left position */
+    height: 144px; /* Set the height */
+    padding: 20px; /* Add padding for better readability */
+    background-color: var(--white); /* Optional: Add background color */
+    color: var(--black); /* Optional: Set text color */
+}
+
+.new-collections-title {
+    font-family: "Poppins", serif;
+    font-size: 64px;
+    line-height: 96px;
+    letter-spacing: 0%;
+    text-align: right;
+    position: absolute;
+    top: 1115px; /* Position 121px below the hero section */
+    left: 1290px; /* Move more to the right */
+    width: 394px; /* Adjust width to account for left position */
+    height: 192px; /* Set the height */
+    padding: 20px;
+}
+
+.new-collections-title .new {
+    font-weight: 700; /* Bold */
+}
+
+.new-collections-title .collections {
+    font-weight: 600; /* Semibold */
+}
+
+.collection-images {
+    position: absolute;
+    top: 31px;
+    left: 40px;
+    display: flex;
+    gap: 38px; /* Add gap between images */
+    padding: 20px;
+}
+
+.collection-item {
+    text-align: center;
+    position: absolute;
+}
+
+.collection-image1, .collection-image2, .collection-image3 {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+}
+
+.collection-image1:hover, .collection-image2:hover, .collection-image3:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.collection-image1 {
+    width: 400px;
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 1331px;
+    left: 26px; /* Align with the new collection section */
+}
+
+.collection-image2 {
+    width: 430px;
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 1331px;
+    left: 600px; /* Position in the middle */
+}
+
+.collection-image3 {
+    width: 400px;
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 1331px;
+    left: 1230px; /* Align with the new collections title */
+}
+
+.collection-text {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    margin-top: 22px; /* Add space below the image */
+    position: absolute;
+    top: 1632px; /* Position the text below the images */
+    white-space: nowrap;
+}
+
+.collection-text1 {
+    left: 26px; /* Align with the first image */
+    top: 1821px;
+}
+
+.collection-text2 {
+    left: 600px; /* Align with the second image */
+    top: 1871px;
+}
+
+.collection-text3 {
+    left: 1230px; /* Align with the third image */
+    top: 1831px;
+}
+
 
 .poppins-medium {
     font-family: "Poppins", serif;
@@ -168,8 +331,8 @@ nav ul li a img {
     font-style: normal;
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1668px) {
+/* Media query for screens below 1456px */
+@media screen and (max-width: 1456px) {
     .wrapper {
         width: 100%;
         padding: 0 20px;
@@ -193,7 +356,7 @@ nav ul li a img {
     }
 
     nav ul li:nth-child(2) {
-        margin-right: 45px; /* Gap between event and SVG icon */
+        margin-right: 45px; /* Gap between event and Cart */
     }
 
     nav ul li a {
@@ -201,13 +364,12 @@ nav ul li a img {
     }
 
     .hero-section {
-        padding-top: 0px;
+        padding-top: 20px;
     }
 
     .hero-image {
         width: 100%; /* Make the image take the full width */
-        max-width: 1440px; /* Set the max width */
-        height: auto;
+        height: auto; /* Maintain aspect ratio */
     }
 
     .hero-text {
@@ -217,8 +379,130 @@ nav ul li a img {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .new-collections-title {
+        font-size: 48px;
+        line-height: 72px;
+        padding: 15px;
+    }
+
+    .new-collection-section {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 15px;
+    }
+
+    .collection-images {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .collection-item {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .collection-image1, .collection-image2, .collection-image3 {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .collection-text1, .collection-text2, .collection-text3 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+        text-align: center;
+    }
 }
 
+/* Media query for screens between 768px and 1456px */
+@media screen and (min-width: 768px) and (max-width: 1456px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 35px;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    nav ul li:nth-child(1) {
+        margin-right: 61px; /* Gap between product and event */
+    }
+
+    nav ul li:nth-child(2) {
+        margin-right: 47px; /* Gap between event and Cart */
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .hero-section {
+        padding-top: 30px;
+    }
+
+    .hero-image {
+        width: 100%; /* Make the image take the full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .hero-text {
+        width: 80%;
+        font-size: 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .new-collections-title {
+        font-size: 48px;
+        line-height: 72px;
+        padding: 15px;
+    }
+
+    .new-collection-section {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 15px;
+    }
+
+    .collection-images {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .collection-item {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .collection-image1, .collection-image2, .collection-image3 {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .collection-text1, .collection-text2, .collection-text3 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
 
 /* Media query for screens below 768px */
 @media screen and (max-width: 768px) {
@@ -245,7 +529,7 @@ nav ul li a img {
     }
 
     nav ul li:nth-child(2) {
-        margin-right: 40px; /* Gap between event and SVG icon */
+        margin-right: 40px; /* Gap between event and Cart */
     }
 
     nav ul li a {
@@ -253,21 +537,73 @@ nav ul li a img {
     }
 
     .hero-section {
-        padding-top: 0px;
+        padding-top: 20px;
     }
 
     .hero-image {
         width: 100%; /* Make the image take the full width */
-        max-width: 1440px; /* Set the max width */
-        height: auto;
-        top: -200px;
+        height: auto; /* Maintain aspect ratio */
     }
 
     .hero-text {
         width: 90%;
         font-size: 80px;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+}
+
+    /* Responsive New Collections Section for screens below 768px */
+@media screen and (max-width: 768px) {
+    .new-collections-title {
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .new-collection-section {
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .collection-images {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .collection-item {
+        position: relative;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .collection-image1, .collection-image2, .collection-image3 {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .collection-text1, .collection-text2, .collection-text3 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+  
 }
