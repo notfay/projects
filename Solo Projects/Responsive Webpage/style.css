@@ -502,6 +502,11 @@ nav ul li a:hover::after {
     margin-top: 20px;
 }
 
+.wijaya-opus-link {
+    color: inherit; 
+    text-decoration: underline; 
+}
+
 .footer {
     background-color: var(--black);
     color: var(--white);

@@ -117,7 +117,7 @@ nav ul li a:hover::after {
     text-align: center;
     padding: 50px 0; 
     position: absolute;
-    bottom: -4200px; 
+    bottom: -100px; 
     left: 0;
 }
 
@@ -173,3 +173,24 @@ nav ul li a:hover::after {
     font-style: normal;
 }
 
+.cart-message {
+    text-align: center;
+    margin: 180px 0;
+    padding: 50px 0; 
+    padding-bottom: 50px;
+}
+
+.cart-empty, .cart-login {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0%;
+}
+
+.cart-login {
+    color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
