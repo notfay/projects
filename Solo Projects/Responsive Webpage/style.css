@@ -1,3 +1,5 @@
+/* OMG WTH */
+
 :root {
     --white: #FFFFFF;
     --black: #1B1B1B; 
@@ -9,11 +11,12 @@
     font-family: "Poppins", serif;
 }
 
+
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 80px; /* Set the height of the navbar */
+    height: 80px; 
     background-color: var(--white);
     z-index: 1000;
     border-bottom: 1px solid #00000026;
@@ -23,25 +26,30 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Adjust the width to be responsive */
-    max-width: 1440px; /* Set the max width */
-    height: 100%; /* Ensure the wrapper takes the full height of the header */
-    padding: 0 20px; /* Adjust padding for responsiveness */
-    margin: 0 auto; /* Center the wrapper */
+    width: 100%;
+    max-width: 1440px;
+    height: 100%; 
+    padding: 0 20px; 
+    margin: 0 auto; 
 }
 
 .logo {
-    width: 150px; /* Reduced width */
-    height: 50px; /* Reduced height */
+    width: 150px; 
+    height: 50px;
     font-family: "Poppins", serif;
     font-weight: 600;
-    font-size: 30px; /* Reduced font size */
-    line-height: 50px; /* Adjusted line height */
+    font-size: 30px; 
+    line-height: 50px; 
     letter-spacing: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; /* Ensure the text does not wrap */
+    white-space: nowrap; 
+}
+
+.logo a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
 }
 
 nav {
@@ -55,7 +63,7 @@ nav {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Ensure items are aligned to the right */
+    justify-content: flex-end; 
 }
 
 nav ul {
@@ -63,7 +71,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 20px; /* Adjust gap for responsiveness */
+    gap: 20px; 
 }
 
 nav ul li {
@@ -72,11 +80,11 @@ nav ul li {
 }
 
 nav ul li:nth-child(1) {
-    margin-right: 61px; /* Gap between product and event */
+    margin-right: 61px; 
 }
 
 nav ul li:nth-child(2) {
-    margin-right: 47px; /* Gap between event and Cart */
+    margin-right: 47px; 
 }
 
 nav ul li a {
@@ -104,29 +112,27 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* HERO SECTION */
-
 .hero-section {
     position: relative;
     width: 100%;
-    height: 999px; /* Adjust the height to account for the navbar */
+    height: 999px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 50px; /* Add padding to move the image lower */
-    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    padding-top: 50px; 
+    overflow: hidden; 
 }
 
 .hero-image, .hero-image2, .hero-image3, .hero-image4, .hero-image5, .hero-image6 {
     position: absolute;
-    width: 100%; /* Make the image take the full width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the entire area without stretching */
-    background-size: cover; /* Ensure the image covers the entire area */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    opacity: 0; /* Start with the image hidden */
-    animation: fade 30s infinite; /* Apply the fade animation */
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    opacity: 0; 
+    animation: fade 30s infinite; 
 }
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/homepagemain.jpg'); /* Add your image URL here */
@@ -134,27 +140,27 @@ nav ul li a:hover::after {
 
 .hero-image2 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-2.jpg'); /* Add your image URL here */
-    animation-delay: 5s; /* Delay the start of the animation */
+    animation-delay: 5s; 
 }
 
 .hero-image3 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-3.jpg'); /* Add your image URL here */
-    animation-delay: 10s; /* Delay the start of the animation */
+    animation-delay: 10s; 
 }
 
 .hero-image4 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-4.jpeg'); /* Add your image URL here */
-    animation-delay: 15s; /* Delay the start of the animation */
+    animation-delay: 15s;
 }
 
 .hero-image5 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-5.jpg'); /* Add your image URL here */
-    animation-delay: 20s; /* Delay the start of the animation */
+    animation-delay: 20s; 
 }
 
 .hero-image6 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-6.jpg'); /* Add your image URL here */
-    animation-delay: 25s; /* Delay the start of the animation */
+    animation-delay: 25s; 
 }
 
 @keyframes fade {
@@ -167,11 +173,11 @@ nav ul li a:hover::after {
 
 .hero-text {
     position: absolute;
-    width: 100%; /* Make the text container take the full width */
-    height: auto; /* Adjust the height as needed */
+    width: 100%; 
+    height: auto; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the text horizontally and vertically */
+    transform: translate(-50%, -50%); 
     font-family: "Poppins", serif;
     font-weight: 700;
     font-size: 140px;
@@ -182,8 +188,8 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction: column; /* Stack the text vertically */
-    z-index: 2; /* Ensure the text is above the overlay */
+    flex-direction: column; 
+    z-index: 2; 
 }
 
 .hero-subtext {
@@ -194,10 +200,8 @@ nav ul li a:hover::after {
     letter-spacing: 0%;
     color: var(--white);
     text-align: center;
-    margin-top: 100px; /* Add some space between the main text and the subtext */
+    margin-top: 100px;
 }
-
-/* NEW COLLECTIONS */
 
 .new-collection-section {
     font-family: "Poppins", serif;
@@ -206,13 +210,13 @@ nav ul li a:hover::after {
     line-height: 24px;
     letter-spacing: 0%;
     position: absolute;
-    top: 1155px; /* Position 121px below the hero section */
-    left: 66px; /* Position 74px from the left */
-    width: 382px; /* Adjust width to account for left position */
-    height: 144px; /* Set the height */
-    padding: 20px; /* Add padding for better readability */
-    background-color: var(--white); /* Optional: Add background color */
-    color: var(--black); /* Optional: Set text color */
+    top: 1155px;
+    left: 66px;
+    width: 382px; 
+    height: 144px; 
+    padding: 20px;
+    background-color: var(--white);
+    color: var(--black); 
 }
 
 .new-collections-title {
@@ -222,19 +226,19 @@ nav ul li a:hover::after {
     letter-spacing: 0%;
     text-align: right;
     position: absolute;
-    top: 1115px; /* Position 121px below the hero section */
-    left: 1290px; /* Move more to the right */
-    width: 394px; /* Adjust width to account for left position */
-    height: 192px; /* Set the height */
+    top: 1115px; 
+    left: 1290px; 
+    width: 394px; 
+    height: 192px;
     padding: 20px;
 }
 
 .new-collections-title .new {
-    font-weight: 700; /* Bold */
+    font-weight: 700; 
 }
 
 .new-collections-title .collections {
-    font-weight: 600; /* Semibold */
+    font-weight: 600;
 }
 
 .collection-images {
@@ -242,7 +246,7 @@ nav ul li a:hover::after {
     top: 31px;
     left: 40px;
     display: flex;
-    gap: 38px; /* Add gap between images */
+    gap: 38px; 
     padding: 20px;
 }
 
@@ -253,36 +257,36 @@ nav ul li a:hover::after {
 
 .collection-image1, .collection-image2, .collection-image3 {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+    height: auto;
+    transition: transform 0.3s ease; 
 }
 
 .collection-image1:hover, .collection-image2:hover, .collection-image3:hover {
-    transform: scale(1.05); /* Slightly zoom in on hover */
+    transform: scale(1.05); 
 }
 
 .collection-image1 {
     width: 400px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     position: absolute;
     top: 1331px;
-    left: 26px; /* Align with the new collection section */
+    left: 26px; 
 }
 
 .collection-image2 {
     width: 430px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     position: absolute;
     top: 1331px;
-    left: 600px; /* Position in the middle */
+    left: 600px; 
 }
 
 .collection-image3 {
     width: 400px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     position: absolute;
     top: 1331px;
-    left: 1230px; /* Align with the new collections title */
+    left: 1230px; 
 }
 
 .collection-text {
@@ -291,29 +295,26 @@ nav ul li a:hover::after {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0%;
-    margin-top: 22px; /* Add space below the image */
+    margin-top: 22px; 
     position: absolute;
-    top: 1632px; /* Position the text below the images */
+    top: 1632px; 
     white-space: nowrap;
 }
 
 .collection-text1 {
-    left: 26px; /* Align with the first image */
+    left: 26px; 
     top: 1821px;
 }
 
 .collection-text2 {
-    left: 600px; /* Align with the second image */
+    left: 600px; 
     top: 1871px;
 }
 
 .collection-text3 {
-    left: 1230px; /* Align with the third image */
+    left: 1230px; 
     top: 1831px;
 }
-
-/* PREMIUM COLLECTON */
-
 
 .premium-collection-container {
     position: absolute;
@@ -333,11 +334,11 @@ nav ul li a:hover::after {
 }
 
 .premium-collection-title .premium {
-    font-weight: 700; /* Bold */
+    font-weight: 700; 
 }
 
 .premium-collection-title .collections {
-    font-weight: 600; /* Semibold */
+    font-weight: 600; 
 }
 
 .premium-collection-image {
@@ -352,7 +353,7 @@ nav ul li a:hover::after {
 }
 
 .premium-collection-image:hover {
-    transform: scale(1.05); /* Slightly zoom in on hover */
+    transform: scale(1.05); 
 }
 
 .premium-collection-text {
@@ -360,7 +361,7 @@ nav ul li a:hover::after {
     bottom: 0;
     left: 0;
     padding: 20px;
-    color: white; /* Adjust text color as needed */
+    color: white; 
 }
 
 .hand-selected {
@@ -396,7 +397,7 @@ nav ul li a:hover::after {
     position: absolute;
     width: 500px;
     height: 480px;
-    margin-top: 20px; /* Add some space between the images */
+    margin-top: 20px; 
     object-fit: cover;
     filter: grayscale(100%);
 }
@@ -404,29 +405,28 @@ nav ul li a:hover::after {
 .additional-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire area without stretching */
-    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+    object-fit: cover;
+    transition: transform 0.3s ease; 
 }
 
 .additional-image:hover {
-    transform: scale(1.05); /* Slightly zoom in on hover */
+    transform: scale(1.05);
 }
 
 .additional-image-container-1 {
-    top: 2850px; /* Adjust the top value as needed */
+    top: 2850px;
     left: 82px;
 }
 
 .additional-image-container-2 {
-    top: 2850px; /* Adjust the top value as needed */
+    top: 2850px; 
     left: 635px;
 }
 
 .additional-image-container-3 {
-    top: 2850px; /* Adjust the top value as needed */
+    top: 2850px; 
     left: 1182px;
 }
-
 
 .additional-text {
     font-family: "Poppins", serif;
@@ -434,35 +434,32 @@ nav ul li a:hover::after {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0%;
-    margin-top: 22px; /* Add space below the image */
+    margin-top: 22px;
     position: absolute;
     white-space: nowrap;
 }
 
 .additional-text1 {
-    left: 0px; /* Align with the first image */
+    left: 0px; 
     top: 490px;
 }
 
 .additional-text2 {
-    left: px; /* Align with the second image */
+    left: px; 
     top: 490px;
 }
 
 .additional-text3 {
-    left: px; /* Align with the third image */
+    left: px; 
     top: 490px;
 }
 
-
-/* wijaya opus */
-
 .wijaya-opus {
     position: absolute;
-    top: 3700px; /* Adjust the top value as needed */
-    left: 83px; /* Adjust the left value as needed */
-    width: 1600px; /* Set the width */
-    height: 803px; /* Set the height */
+    top: 3700px; 
+    left: 83px; 
+    width: 1600px; 
+    height: 803px; 
     background-color: var(--black); 
     display: flex;
     flex-direction: column;
@@ -480,8 +477,8 @@ nav ul li a:hover::after {
 
 .wijaya-opus-text {
     text-align: center;
-    color: var(--white); /* Set text color to white */
-    margin-top: 90px; /* Add some space between the image and the text */
+    color: var(--white);
+    margin-top: 90px; 
 }
 
 .wijaya-opus-title {
@@ -505,17 +502,14 @@ nav ul li a:hover::after {
     margin-top: 20px;
 }
 
-
-/* Footer */
-
 .footer {
     background-color: var(--black);
     color: var(--white);
     width: 100%;
     text-align: center;
-    padding: 50px 0; /* Adjust padding as needed */
+    padding: 50px 0; 
     position: absolute;
-    bottom: -4200px; /* Adjust the bottom value as needed */
+    bottom: -4200px; 
     left: 0;
 }
 
@@ -542,7 +536,16 @@ nav ul li a:hover::after {
     margin: 0;
 }
 
-/* Font */
+.footer-link {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: var(--white);
+    text-decoration: underline;
+    margin-left: 10px;
+}
 
 .poppins-medium {
     font-family: "Poppins", serif;
@@ -562,7 +565,6 @@ nav ul li a:hover::after {
     font-style: normal;
 }
 
-/* Media query for screens below 1456px */
 @media screen and (max-width: 1456px) {
     .wrapper {
         width: 100%;
@@ -575,19 +577,19 @@ nav ul li a:hover::after {
 
     nav ul {
         gap: 20px;
-        justify-content: flex-start; /* Move items to the left */
+        justify-content: flex-start; 
     }
 
     .nav-container {
-        justify-content: flex-start; /* Move container to the left */
+        justify-content: flex-start;
     }
 
     nav ul li:nth-child(1) {
-        margin-right: 35px; /* Gap between product and event */
+        margin-right: 35px; 
     }
 
     nav ul li:nth-child(2) {
-        margin-right: 45px; /* Gap between event and Cart */
+        margin-right: 45px; 
     }
 
     nav ul li a {
@@ -599,8 +601,8 @@ nav ul li a:hover::after {
     }
 
     .hero-image {
-        width: 100%; /* Make the image take the full width */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 
     .hero-text {
@@ -651,7 +653,6 @@ nav ul li a:hover::after {
     }
 }
 
-/* Media query for screens between 768px and 1456px */
 @media screen and (min-width: 768px) and (max-width: 1456px) {
     .wrapper {
         width: 100%;
@@ -667,11 +668,11 @@ nav ul li a:hover::after {
     }
 
     nav ul li:nth-child(1) {
-        margin-right: 61px; /* Gap between product and event */
+        margin-right: 61px; 
     }
 
     nav ul li:nth-child(2) {
-        margin-right: 47px; /* Gap between event and Cart */
+        margin-right: 47px;
     }
 
     nav ul li a {
@@ -683,8 +684,8 @@ nav ul li a:hover::after {
     }
 
     .hero-image {
-        width: 100%; /* Make the image take the full width */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 
     .hero-text {
@@ -735,7 +736,6 @@ nav ul li a:hover::after {
     }
 }
 
-/* Media query for screens below 768px */
 @media screen and (max-width: 768px) {
     .wrapper {
         width: 100%;
@@ -747,20 +747,20 @@ nav ul li a:hover::after {
     }
 
     nav ul {
-        gap: 10px; /* Reduce gap for smaller screens */
-        justify-content: flex-start; /* Move items to the left */
+        gap: 10px; 
+        justify-content: flex-start; 
     }
 
     .nav-container {
-        justify-content: flex-start; /* Move container to the left */
+        justify-content: flex-start;
     }
 
     nav ul li:nth-child(1) {
-        margin-right: 30px; /* Gap between product and event */
+        margin-right: 30px; 
     }
 
     nav ul li:nth-child(2) {
-        margin-right: 40px; /* Gap between event and Cart */
+        margin-right: 40px; 
     }
 
     nav ul li a {
@@ -772,8 +772,8 @@ nav ul li a:hover::after {
     }
 
     .hero-image {
-        width: 100%; /* Make the image take the full width */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 
     .hero-text {
@@ -786,7 +786,6 @@ nav ul li a:hover::after {
 
 }
 
-    /* Responsive New Collections Section for screens below 768px */
 @media screen and (max-width: 768px) {
     .new-collections-title {
         font-size: 32px;
