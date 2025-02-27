@@ -554,3 +554,204 @@ nav ul li a:hover::after {
     object-fit: cover;
     border: 5px solid #0000; 
 }
+
+/* Updated media queries for product.css */
+@media screen and (max-width: 1440px) {
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    .collection-header {
+      position: relative;
+      top: 100px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .collection-images, .collection-images2, 
+    .collection-images3, .collection-images4 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 100px;
+      left: 0;
+      width: 100%;
+    }
+    
+    .collection-item, .collection-item2,
+    .collection-item3, .collection-item4 {
+      position: relative;
+      margin-bottom: 60px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .collection-image1, .collection-image2, .collection-image3,
+    .collection-image4, .collection-image5, .collection-image6,
+    .collection-image7, .collection-image8, .collection-image9,
+    .collection-image10 {
+      position: static;
+      margin-bottom: 10px;
+      max-width: 400px;
+      width: 80%;
+    }
+    
+    .collection-text, .collection-text1, .collection-text2, .collection-text3,
+    .collection-texts2, .collection-text4, .collection-text5, .collection-text6,
+    .collection-texts3, .collection-text7, .collection-text8, .collection-text9,
+    .collection-texts10, .collection-text10 {
+      position: static;
+      margin: 5px 0 30px;
+      text-align: center;
+    }
+    
+    .avant {
+      position: relative;
+      top: 100px;
+      margin-top: 50px;
+    }
+    
+    .avant-header {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .avant-title {
+      margin: 0 0 30px 0;
+      text-align: center;
+    }
+    
+    .avant-videos {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    .avant-video {
+      position: static;
+      width: 80%;
+      height: auto;
+      max-height: 600px;
+      aspect-ratio: 9/16;
+      margin: 0 auto;
+    }
+    
+    .footer {
+      position: relative;
+      bottom: auto;
+      margin-top: 150px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .collection-header {
+      top: 80px;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .collection-title, .filters {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .new-collection {
+      font-size: 20px;
+      text-align: center;
+    }
+    
+    .spring-2025 {
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .collection-images, .collection-images2, 
+    .collection-images3, .collection-images4 {
+      top: 80px;
+    }
+    
+    .collection-image1, .collection-image2, .collection-image3,
+    .collection-image4, .collection-image5, .collection-image6,
+    .collection-image7, .collection-image8, .collection-image9,
+    .collection-image10 {
+      max-width: 300px;
+    }
+    
+    .avants {
+      font-size: 48px;
+    }
+    
+    .discover {
+      font-size: 14px;
+    }
+    
+    .avant-video {
+      width: 90%;
+    }
+    
+    .footer {
+      margin-top: 100px;
+    }
+    
+    .footer-title {
+      font-size: 48px;
+      line-height: 72px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .collection-header {
+      top: 60px;
+    }
+    
+    .collection-title, .filters {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    
+    .new-collection {
+      font-size: 18px;
+    }
+    
+    .spring-2025 {
+      font-size: 14px;
+    }
+    
+    .collection-images, .collection-images2, 
+    .collection-images3, .collection-images4 {
+      top: 60px;
+      padding: 10px;
+    }
+    
+    .collection-image1, .collection-image2, .collection-image3,
+    .collection-image4, .collection-image5, .collection-image6,
+    .collection-image7, .collection-image8, .collection-image9,
+    .collection-image10 {
+      max-width: 250px;
+    }
+    
+    .avants {
+      font-size: 36px;
+    }
+    
+    .discover {
+      font-size: 12px;
+    }
+    
+    .avant-video {
+      width: 95%;
+    }
+    
+    .footer-title {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }

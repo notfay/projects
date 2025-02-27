@@ -570,275 +570,342 @@ nav ul li a:hover::after {
     font-style: normal;
 }
 
-@media screen and (max-width: 1456px) {
-    .wrapper {
-        width: 100%;
-        padding: 0 20px;
+@media screen and (max-width: 1440px) {
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
     }
-
-    .logo {
-        font-size: 30px;
-    }
-
-    nav ul {
-        gap: 20px;
-        justify-content: flex-start; 
-    }
-
-    .nav-container {
-        justify-content: flex-start;
-    }
-
-    nav ul li:nth-child(1) {
-        margin-right: 35px; 
-    }
-
-    nav ul li:nth-child(2) {
-        margin-right: 45px; 
-    }
-
-    nav ul li a {
-        font-size: 18px;
-    }
-
-    .hero-section {
-        padding-top: 20px;
-    }
-
-    .hero-image {
-        width: 100%; 
-        height: auto; 
-    }
-
+    
     .hero-text {
-        width: 90%;
-        font-size: 80px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      font-size: 100px;
+      line-height: 150px;
     }
-
-    .new-collections-title {
-        font-size: 48px;
-        line-height: 72px;
-        padding: 15px;
-    }
-
+    
     .new-collection-section {
-        font-size: 14px;
-        line-height: 21px;
-        padding: 15px;
+      position: relative;
+      top: 50px;
+      left: 0;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
     }
-
+    
+    .new-collections-title {
+      position: relative;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    
     .collection-images {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        top: auto;
-        left: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 150px;
+      left: 0;
+      width: 100%;
     }
-
+    
     .collection-item {
-        position: relative;
-        margin-bottom: 20px;
+      position: relative;
+      margin-bottom: 50px;
+      width: 100%;
     }
-
+    
     .collection-image1, .collection-image2, .collection-image3 {
-        position: relative;
-        width: 100%;
-        max-width: 400px;
+      position: static;
+      display: block;
+      margin: 0 auto;
+      max-width: 400px;
+      width: 80%;
     }
-
+    
     .collection-text1, .collection-text2, .collection-text3 {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin-top: 10px;
-        text-align: center;
+      position: static;
+      display: block;
+      margin: 10px auto;
+      text-align: center;
     }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1456px) {
-    .wrapper {
-        width: 100%;
-        padding: 0 20px;
+    
+    .premium-collection-container {
+      position: relative;
+      top: 200px;
+      left: 0;
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
     }
-
-    .logo {
-        font-size: 35px;
+    
+    .premium-collection-image {
+      position: relative;
+      top: 230px;
+      left: 0;
+      width: 90%;
+      margin: 0 auto;
     }
-
-    nav ul {
-        gap: 30px;
+    
+    .hand-selected, .le-classico {
+      position: relative;
+      top: 250px;
+      left: 0;
+      width: 90%;
+      text-align: center;
+      margin: 10px auto;
     }
-
-    nav ul li:nth-child(1) {
-        margin-right: 61px; 
+    
+    .additional-image-container-1,
+    .additional-image-container-2,
+    .additional-image-container-3 {
+      position: relative;
+      top: 350px;
+      left: 0;
+      width: 80%;
+      margin: 30px auto;
+      height: 400px;
     }
-
-    nav ul li:nth-child(2) {
-        margin-right: 47px;
+    
+    .additional-text {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
     }
-
-    nav ul li a {
-        font-size: 20px;
+    
+    .wijaya-opus {
+      position: relative;
+      top: 400px;
+      left: 0;
+      width: 100%;
+      padding: 40px 0;
     }
-
-    .hero-section {
-        padding-top: 30px;
+    
+    .footer {
+      position: relative;
+      top: 450px;
+      bottom: auto;
     }
-
-    .hero-image {
-        width: 100%; 
-        height: auto; 
-    }
-
+  }
+  
+  @media screen and (max-width: 1024px) {
     .hero-text {
-        width: 80%;
-        font-size: 100px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      font-size: 80px;
+      line-height: 120px;
     }
-
+    
     .new-collections-title {
-        font-size: 48px;
-        line-height: 72px;
-        padding: 15px;
+      font-size: 48px;
+      line-height: 72px;
     }
-
-    .new-collection-section {
-        font-size: 14px;
-        line-height: 21px;
-        padding: 15px;
+    
+    .premium-collection-title {
+      font-size: 48px;
+      line-height: 72px;
     }
-
-    .collection-images {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        top: auto;
-        left: auto;
+    
+    .footer-title {
+      font-size: 120px;
+      line-height: 180px;
     }
-
-    .collection-item {
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .collection-image1, .collection-image2, .collection-image3 {
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .collection-text1, .collection-text2, .collection-text3 {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin-top: 10px;
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .wrapper {
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 30px;
-    }
-
-    nav ul {
-        gap: 10px; 
-        justify-content: flex-start; 
-    }
-
-    .nav-container {
-        justify-content: flex-start;
-    }
-
-    nav ul li:nth-child(1) {
-        margin-right: 30px; 
-    }
-
-    nav ul li:nth-child(2) {
-        margin-right: 40px; 
-    }
-
-    nav ul li a {
-        font-size: 18px;
-    }
-
-    .hero-section {
-        padding-top: 20px;
-    }
-
-    .hero-image {
-        width: 100%; 
-        height: auto; 
-    }
-
+  }
+  
+  @media screen and (max-width: 768px) {
     .hero-text {
-        width: 90%;
-        font-size: 80px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      font-size: 48px;
+      line-height: 72px;
     }
-
-}
-
-@media screen and (max-width: 768px) {
-    .new-collections-title {
-        font-size: 32px;
-        line-height: 48px;
-        text-align: center;
-        padding: 10px;
-        position: relative;
-        top: auto;
-        left: auto;
+    
+    .hero-subtext {
+      font-size: 16px;
+      margin-top: 40px;
     }
-
+    
     .new-collection-section {
-        font-size: 12px;
-        line-height: 18px;
-        text-align: center;
-        padding: 10px;
-        position: relative;
-        top: auto;
-        left: auto;
+      top: 30px;
+      padding: 15px;
+      font-size: 14px;
     }
-
+    
+    .new-collections-title {
+      top: 60px;
+      font-size: 36px;
+      line-height: 54px;
+    }
+    
     .collection-images {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        top: auto;
-        left: auto;
+      top: 80px;
     }
-
-    .collection-item {
-        position: relative;
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 300px;
-    }
-
+    
     .collection-image1, .collection-image2, .collection-image3 {
-        position: relative;
-        width: 100%;
-        height: auto;
+      max-width: 300px;
+    }
+    
+    .premium-collection-container {
+      top: 120px;
+      text-align: center;
+      width: 100%;
+      height: 250px;
+      margin-bottom: 300px;
+    }
+    
+    .premium-collection-title {
+      font-size: 36px;
+      line-height: 54px;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .premium-collection-image {
+      top: 140px;
+      height: 300px;
+      margin-bottom: 20px;
     }
 
-    .collection-text1, .collection-text2, .collection-text3 {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin-top: 10px;
-        text-align: center;
+    .premium-collection-text {
+        display: none; 
+      }
+    
+    .hand-selected, .le-classico {
+      top: 150px;
+    }
+    
+    .hand-selected {
+      font-size: 16px;
+    }
+    
+    .le-classico {
+      font-size: 30px;
+      line-height: 45px;
+    }
+    
+    .additional-image-container-1,
+    .additional-image-container-2,
+    .additional-image-container-3 {
+      top: 180px;
+      height: 250px;
+      margin: 70px auto; 
+    }
+    
+    .additional-text {
+      display: none; 
     }
   
-}
+    .wijaya-opus {
+      top: 200px;
+    }
+    
+    .wopus-image {
+      width: 90%;
+      height: 300px;
+    }
+    
+    .footer {
+      top: 250px;
+    }
+    
+    .footer-title {
+      font-size: 60px;
+      line-height: 90px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-text {
+      font-size: 36px;
+      line-height: 54px;
+    }
+    
+    .hero-section {
+      height: 500px;
+    }
+    
+    .hero-subtext {
+      font-size: 14px;
+      margin-top: 30px;
+    }
+    
+    .new-collection-section {
+      top: 20px;
+      padding: 10px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    
+    .new-collections-title {
+      top: 40px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+    
+    .collection-images {
+      top: 60px;
+    }
+    
+    .collection-image1, .collection-image2, .collection-image3 {
+      max-width: 250px;
+    }
+    
+    .premium-collection-container {
+      top: 80px;
+    }
+    
+    .premium-collection-title {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    
+    .premium-collection-image {
+      top: 100px;
+      height: 200px;
+    }
+    
+    .hand-selected {
+      font-size: 14px;
+      top: 110px;
+    }
+    
+    .le-classico {
+      font-size: 24px;
+      line-height: 36px;
+      top: 120px;
+    }
+    
+    .additional-image-container-1 {
+      top: 150px;
+      height: 200px;
+      margin-bottom: 70px;
+    }
+    
+    .additional-image-container-2 {
+      top: 250px;
+      height: 200px;
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+    
+    .additional-image-container-3 {
+      top: 350px;
+      height: 200px;
+      margin-top: 70px;
+    }
+    
+    .wijaya-opus {
+      top: 450px;
+      padding: 20px 0;
+    }
+    
+    .wopus-image {
+      height: 180px;
+    }
+    
+    .footer {
+      top: 500px;
+    }
+    
+    .footer-title {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
