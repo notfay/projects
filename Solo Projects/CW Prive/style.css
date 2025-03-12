@@ -583,7 +583,7 @@ nav ul li a:hover::after {
     
     .new-collection-section {
       position: relative;
-      top: 50px;
+      top: -250px;
       left: 0;
       width: 80%;
       margin: 0 auto;
@@ -592,7 +592,7 @@ nav ul li a:hover::after {
     
     .new-collections-title {
       position: relative;
-      top: 100px;
+      top: -160px;
       left: 0;
       width: 100%;
       text-align: center;
@@ -603,7 +603,7 @@ nav ul li a:hover::after {
       display: flex;
       flex-direction: column;
       align-items: center;
-      top: 150px;
+      top: -200px;
       left: 0;
       width: 100%;
     }
@@ -637,14 +637,28 @@ nav ul li a:hover::after {
       margin: 0 auto;
       text-align: center;
     }
+
+    .premium-collection-title {
+      position: relative;
+      top: -300px; 
+      text-align: center; 
+      z-index: 2;       
+    }
     
     .premium-collection-image {
       position: relative;
-      top: 230px;
+      top: -250px;
       left: 0;
       width: 90%;
       margin: 0 auto;
+      padding: 20px 0;
+      height: 400px;
     }
+
+    .premium-collection-image-container,
+    .additional-image-container {
+    margin-bottom: 40px;
+  }
     
     .hand-selected, .le-classico {
       position: relative;
@@ -653,6 +667,12 @@ nav ul li a:hover::after {
       width: 90%;
       text-align: center;
       margin: 10px auto;
+    }
+
+    .hand-selected,
+    .le-classico,
+    .additional-text {
+      display: none;
     }
     
     .additional-image-container-1,
@@ -752,6 +772,7 @@ nav ul li a:hover::after {
     
     .premium-collection-title {
       font-size: 36px;
+      top: 150px;
       line-height: 54px;
       text-align: center;
       width: 100%;

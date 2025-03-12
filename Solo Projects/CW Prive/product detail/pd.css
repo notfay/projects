@@ -173,3 +173,145 @@ nav ul li a:hover::after {
     font-style: normal;
 }
 
+.back-navigation {
+    margin-top: 150px; 
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.back-arrow {
+    margin-right: 20px;
+}
+
+.product-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-left: 60px; 
+    margin-left: 60px
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "main thumb1"
+        "main thumb2";
+    gap: 20px;
+    width: 90%;
+}
+
+.main-image {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+}
+
+.main-image img {
+    width: 150%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.thumbnail-images {
+    display: contents;
+}
+
+.thumbnail img {
+    width: 130%;
+    height: 50%;
+    object-fit: cover;
+    padding-left: 320px;
+}
+
+.thumbnail:nth-child(2) {
+    position: relative;
+    top: -355px; 
+}
+
+.product-title-uppercase {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    margin-top: -620px;
+    margin-left: 120px;
+}
+
+.product-price {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    margin-top: 30px;
+    margin-left: 120px; 
+}
+
+.avail-size {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    margin-top: 100px;
+    margin-left: 120px; 
+}
+
+.size-options {
+    display: flex;
+    gap: 20px;
+    margin-left: 120px; /* aligns with avail-size margin */
+    margin-top: 20px;
+}
+
+.size-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.size-s {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.size-m {
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.avail-size-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    margin-top: 70px;
+}
+
+.avail-size {
+    margin: 0;
+    margin-top: 20px;
+    margin-right: -90px;
+}

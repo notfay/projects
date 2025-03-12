@@ -555,7 +555,7 @@ nav ul li a:hover::after {
     border: 5px solid #0000; 
 }
 
-/* Updated media queries for product.css */
+
 @media screen and (max-width: 1440px) {
     html, body {
       max-width: 100%;
