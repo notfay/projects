@@ -290,6 +290,14 @@ nav ul li a:hover::after {
     margin-top: 30px; 
 }
 
+.terms-link {
+    color: var(--black);
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
 .terms-checkbox {
     width: 25px; 
     height: 25px; 
