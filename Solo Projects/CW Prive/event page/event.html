@@ -7,6 +7,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     </head>
 <body>
     
@@ -25,6 +27,68 @@
         </div>
     </header>
 
+    <div class="video-container">
+        <div class="video-overlay">
+            <h1 class="video-title">Wijaya Opus 2025</h1>
+        </div>
+        <video autoplay muted loop>
+            <source src="../images/event/Whitecliffe Fashion Show 2022 (Cinematic Trailer 4K) (1).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="registration-title">
+        <span>Wijaya Opus 2025</span>
+        <span>Model Casting Registration</span>
+    </div>
+
+    <form class="registration-form" id="registrationForm" onsubmit="return validateForm(event)">
+        <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" id="fullName" required>
+            <span class="error-message" id="nameError"></span>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Date of Birth</label>
+            <input type="text" class="form-input" id="dob" placeholder="dd/mm/yy" required>
+            <img src="../images/event/uit_calender.svg" alt="Calendar" class="calendar-icon">
+            <span class="error-message" id="dobError"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" id="email" required>
+            <span class="error-message" id="emailError"></span>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Gender</label>
+            <select class="form-input" id="gender" required>
+                <option value="" disabled selected></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <span class="error-message" id="genderError"></span>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Upload ID</label>
+            <input type="file" class="form-input file-input" id="headshot" accept="image/*" required>
+            <span class="error-message" id="headshotError"></span>
+        </div>
+
+        <div class="terms-section">
+            <input type="checkbox" class="terms-checkbox" required>
+            <p class="terms-text">
+                I agree to the <a href="#">Terms & Conditions</a>
+            </p>
+        </div>
+    
+        <button type="submit" class="form-submit">Submit</button>
+    </form>
+
+
     <footer class="footer">
         <div class="footer-content">
             <p class="footer-title">CW Privé</p>
@@ -35,5 +99,6 @@
         </div>
     </footer>
 
+    <script src="event.js"></script>
 </body>
 </html>
