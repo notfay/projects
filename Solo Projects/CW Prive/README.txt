@@ -1,0 +1,1 @@
+Run using Visual Studio Code Live server extension, on 1920 x 1080 Display resolution
