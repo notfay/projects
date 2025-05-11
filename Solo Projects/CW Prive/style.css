@@ -48,8 +48,8 @@ header {
 }
 
 .logo a {
-    color: inherit; /* Inherit color from parent */
-    text-decoration: none; /* Remove underline */
+    color: inherit; 
+    text-decoration: none; 
 }
 
 nav {
@@ -135,31 +135,31 @@ nav ul li a:hover::after {
     animation: fade 30s infinite; 
 }
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/homepagemain.jpg'); /* Add your image URL here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/homepagemain.jpg'); 
 }
 
 .hero-image2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-2.jpg'); /* Add your image URL here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-2.jpg'); 
     animation-delay: 5s; 
 }
 
 .hero-image3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-3.jpg'); /* Add your image URL here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-3.jpg'); 
     animation-delay: 10s; 
 }
 
 .hero-image4 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-4.jpeg'); /* Add your image URL here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-4.jpeg'); 
     animation-delay: 15s;
 }
 
 .hero-image5 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-5.jpg'); /* Add your image URL here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-5.jpg'); 
     animation-delay: 20s; 
 }
 
 .hero-image6 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-6.jpg'); /* Add your image URL here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Home/hero-6.jpg'); 
     animation-delay: 25s; 
 }
 

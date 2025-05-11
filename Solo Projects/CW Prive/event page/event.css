@@ -221,14 +221,14 @@ nav ul li a:hover::after {
     line-height: 100%;
     letter-spacing: 0%;
     width: 882px;
-    margin-top: 125px; /* 991px - video container height and its margin */
+    margin-top: 125px; 
     margin-left: 610px;
     margin-bottom: 150px;
     color: var(--black);
 }
 
 .registration-title span {
-    display: block; /* Makes each line appear on a new line */
+    display: block; 
 }
 
 .registration-form {
@@ -258,7 +258,7 @@ nav ul li a:hover::after {
     height: 50px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    padding: 0 40px 0 15px; /* Added right padding to prevent text overlap with icon */
+    padding: 0 40px 0 15px; 
     font-family: "Poppins", serif;
     font-size: 16px;
 }

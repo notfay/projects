@@ -173,3 +173,451 @@ nav ul li a:hover::after {
     font-style: normal;
 }
 
+.about-container {
+    margin-top: 202px; 
+    padding: 0 61px; 
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-header {
+    width: 74px;
+    height: 36px;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.about-tagline {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--black);
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
+
+.about-divider-container {
+    position: absolute;
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    height: 622px;
+    left: 0; 
+    right: 0;
+}
+
+.about-divider {
+    width: 8000px;
+    height: 0px;
+    position: absolute;
+    top: 0;
+    left: -650;
+    right: 0;
+    border: none;
+    border-top: 1px solid #00000066; 
+}
+
+.about-divider-vertical {
+    position: absolute;
+    width: 500px; 
+    top: 250px; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(-89.82deg);
+    transform-origin: center top;
+    border: none;
+    border-top: 1px solid #00000066;  
+    z-index: 1;
+}
+
+.about-mission-vision {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 300px; 
+    padding: 0 61px;
+    box-sizing: border-box;
+}
+
+.about-mission {
+    flex: 1;
+    max-width: 600px;
+    margin-left: auto; 
+    padding-right: 130px; 
+}
+
+.about-vision {
+    flex: 1;
+    max-width: 600px;
+    margin-right: auto;
+    padding-left: 60px; 
+}
+
+.about-mission h2, .about-vision h2 {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+
+.about-mission p, .about-vision p {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--black);
+}
+
+.about-image-container {
+    width: 100vw;
+    margin: 550px 0 100px;
+    position: relative;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
+
+.about-image {
+    width: 100%;
+    margin-top: -410px;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.about-mission-vision {
+    margin-top: 300px;
+}
+
+
+.about-divider-container-bottom {
+    position: absolute;
+    width: 100%;
+    margin-top: 30px; 
+    height: 622px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.about-heritage-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    margin: 150px auto 100px;
+    padding: 0 61px;
+    box-sizing: border-box;
+    gap: 40px;
+}
+
+.about-heritage, .about-logo {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-heritage h2, .about-logo h2 {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--black);
+    margin-bottom: 40px;
+}
+
+.about-heritage p, .about-logo p {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 24px;
+}
+
+.about-flagship-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    margin: 350px auto 500px; 
+    padding: 0 61px;
+    box-sizing: border-box;
+    gap: 40px;
+}
+
+.about-flagship-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-flagship-image {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-flagship-text h2 {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--black);
+    margin-bottom: 40px;
+}
+
+.about-flagship-text p {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 24px;
+}
+
+.flagship-image {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .about-divider-container {
+        height: 500px;
+    }
+    
+    .about-divider {
+        margin-left: calc(-61px + (-50vw + 50%));
+    }
+    
+    .about-divider-vertical {
+        width: 650px;
+        left: 50%;
+        top: 325px;
+    }
+
+    .about-mission-vision {
+        margin-top: 350px;
+    }
+    
+    .about-mission {
+        padding-right: 60px; 
+    }
+    
+    .about-vision {
+        padding-left: 30px; 
+    }
+    
+    .about-mission h2, .about-vision h2 {
+        font-size: 30px;
+    }
+
+    .about-image-container {
+        margin-top: 450px;
+        margin-bottom: 80px;
+    }
+
+    .about-divider-container-bottom {
+        position: absolute;
+        margin-top: 50px; 
+        height: 500px;
+    }
+    
+    .about-divider-bottom {
+        top: 0; 
+        margin-left: calc(-61px + (-50vw + 50%));
+    }
+
+    .about-heritage-section {
+        margin: 120px auto 80px;
+    }
+
+    .about-flagship-section {
+        margin: 300px auto 80px;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        padding: 0 30px;
+    }
+    
+    .about-divider-vertical {
+        display: none;
+    }
+    
+    .about-divider-container {
+        height: auto;
+    }
+    
+    .about-divider {
+        margin-left: calc(-30px + (-50vw + 50%));
+    }
+
+    .about-mission-vision {
+        flex-direction: column;
+        margin-top: 300px;
+        gap: 80px; 
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-mission, .about-vision {
+        margin: 0 auto; 
+        padding: 0 20px; 
+        max-width: 80%;
+    }
+
+    .about-image-container {
+        margin-top: 480px;
+        margin-bottom: 60px;
+        padding: 0 30px;
+    }
+
+    .about-divider-container-bottom {
+        position: absolute;
+        margin-top: 50px; 
+        height: auto;
+    }
+    
+    .about-divider-bottom {
+        top: 0;
+        margin-left: calc(-30px + (-50vw + 50%));
+    }
+
+    .about-heritage-section {
+        flex-direction: column;
+        margin: 100px auto 60px;
+        padding: 0 30px;
+        gap: 80px;
+        align-items: center; 
+        text-align: center; 
+    }
+    
+    .about-heritage, .about-logo {
+        margin: 0 auto; 
+        padding: 0 20px; 
+        max-width: 80%; 
+    }
+    
+    .about-heritage h2, .about-logo h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+    
+    .about-heritage p, .about-logo p {
+        text-align: center; 
+    }
+
+    .about-flagship-section {
+        flex-direction: column;
+        margin: 250px auto 250px;
+        margin-bottom: 80px;
+        padding: 0 30px;
+        gap: 80px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-flagship-text, .about-flagship-image {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 80%;
+        text-align: center;
+    }
+    
+    .about-flagship-text h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+    
+    .about-flagship-text p {
+        text-align: center;
+    }
+    
+    .about-flagship-image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .flagship-image {
+        max-width: 100%;
+        margin-bottom: 100px;
+    }
+    
+    .footer {
+        bottom: -4500px; 
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .about-container {
+        padding: 0 20px;
+    }
+    
+    .about-divider {
+        margin-left: calc(-20px + (-50vw + 50%));
+    }
+
+    .about-mission-vision {
+        margin-top: 80px;
+        gap: 60px;
+    }
+    
+    .about-mission, .about-vision {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .about-mission h2, .about-vision h2 {
+        font-size: 24px;
+    }
+    
+    .about-mission p, .about-vision p {
+        font-size: 16px;
+    }
+
+    .about-image-container {
+        margin-top: 250px;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .about-divider-container-bottom {
+        margin-top: -40px; 
+    }
+
+    .about-heritage-section {
+        margin: 80px auto 40px;
+        padding: 0 20px;
+        gap: 60px;
+    }
+    
+    .about-heritage h2, .about-logo h2 {
+        font-size: 32px;
+    }
+
+}

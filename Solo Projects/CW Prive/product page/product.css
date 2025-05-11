@@ -286,8 +286,6 @@ nav ul li a:hover::after {
     top: 1750px; 
 }
 
-/* section 2 */
-
 .collection-images2 {
     position: absolute;
     top: -400px;
@@ -365,7 +363,6 @@ nav ul li a:hover::after {
     top: 1751px;
 }
 
-/* section 3 */
 
 .collection-image7, .collection-image8, .collection-image9 {
     width: 400px;
@@ -563,11 +560,26 @@ nav ul li a:hover::after {
     }
     
     .collection-header {
-      position: relative;
-      top: 100px;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+        position: relative;
+        top: 100px;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between; 
+        width: 90%;
+        margin: 0 auto; 
+        padding: 0 20px;
+      }
+
+      .collection-title {
+        margin-left: 0; 
+        text-align: left;
+      }
+      
+      .filters {
+        margin-right: 0; 
+        text-align: right;
+      }
+
     
     .collection-images, .collection-images2, 
     .collection-images3, .collection-images4 {
