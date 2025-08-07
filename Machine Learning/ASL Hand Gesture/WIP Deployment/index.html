@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ASL with Hand Detection</title>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <style>
+    /* Container to stack video and canvas */
+    #container {
+      position: relative;
+      width: 640px;
+      height: 480px;
+    }
+
+    #webcam, #output_canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* Remove width/height from CSS or set to auto */
+      width: auto;
+      height: auto;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="output_canvas" width="640" height="480" style="position:absolute;top:0;left:0;pointer-events:none;"></canvas>
+  </div>
+
+  <div id="prediction"></div>
+  <button id="startBtn">Start Prediction</button>
+
+  <script src="appScript.js"></script>
+</body>
+</html>
